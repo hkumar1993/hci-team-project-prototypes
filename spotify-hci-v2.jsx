@@ -775,7 +775,7 @@ export default function App(){
       pointerEvents:'none',letterSpacing:.3}}>
       Drag to pan · Ctrl+scroll to zoom
     </div>
-    <div ref={vpRef} style={{position:'fixed',inset:0,background:'#f0eee9',
+    <div ref={vpRef} style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#f0eee9',
       overflow:'hidden',touchAction:'none',cursor:'default',userSelect:'none',
       backgroundImage:GRID,backgroundSize:'80px 80px'}}>
       <div style={{position:'absolute',top:0,left:0,transformOrigin:'0 0',
