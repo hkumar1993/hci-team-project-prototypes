@@ -1,90 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { GENRES, ARTISTS, SONGS } from './src/songData.js';
 
 const BG='#0E0A1F',CREAM='#F5EFE0',LIME='#D4FF6B',CORAL='#FF6B57',VIOLET='#B7A8FF';
-
-// ── Data ─────────────────────────────────────────────────────
-
-const GENRES=[
-  {id:'g1', name:'Lo-fi Ambient',    weight:.82,hue:200},
-  {id:'g2', name:'Bedroom Pop',      weight:.71,hue:320},
-  {id:'g3', name:'Mid-90s R&B',      weight:.64,hue:14},
-  {id:'g4', name:'Shoegaze',         weight:.55,hue:264},
-  {id:'g5', name:'Country Pop',      weight:.28,hue:36},
-  {id:'g6', name:'Holiday',          weight:.09,hue:140},
-  {id:'g7', name:'Indie Folk',       weight:.67,hue:40},
-  {id:'g8', name:'Dream Pop',        weight:.58,hue:280},
-  {id:'g9', name:'Neo-Soul',         weight:.73,hue:20},
-  {id:'g10',name:'Jazz Fusion',      weight:.44,hue:180},
-  {id:'g11',name:'Alt-Country',      weight:.32,hue:30},
-  {id:'g12',name:'Chillwave',        weight:.61,hue:190},
-  {id:'g13',name:'Post-Rock',        weight:.38,hue:240},
-  {id:'g14',name:'Synth-Pop',        weight:.49,hue:290},
-  {id:'g15',name:'Acoustic Blues',   weight:.22,hue:60},
-  {id:'g16',name:'Trip-Hop',         weight:.56,hue:210},
-  {id:'g17',name:'Indie Electronic', weight:.69,hue:170},
-  {id:'g18',name:'Soft Rock',        weight:.41,hue:10},
-  {id:'g19',name:'Bossa Nova',       weight:.17,hue:80},
-  {id:'g20',name:'Dark Folk',        weight:.53,hue:260},
-];
-
-const ARTISTS=[
-  {id:'a1', name:'Jules Marin',      plays:412,hue:14, influence:.82},
-  {id:'a2', name:'Odette Roe',       plays:308,hue:34, influence:.75},
-  {id:'a3', name:'Harbour & Vane',   plays:289,hue:204,influence:.70},
-  {id:'a4', name:'The Usual Quiet',  plays:12, hue:300,influence:.03},
-  {id:'a5', name:'Vale Harper',      plays:5,  hue:252,influence:.01},
-  {id:'a6', name:'Moss & Meridian',  plays:174,hue:132,influence:.42},
-  {id:'a7', name:'Neon Pilgrim',     plays:240,hue:162,influence:.58},
-  {id:'a8', name:'Saga Linde',       plays:195,hue:224,influence:.47},
-  {id:'a9', name:'Wren Aldine',      plays:88, hue:88, influence:.21},
-  {id:'a10',name:'Fernand Kite',     plays:320,hue:10, influence:.78},
-  {id:'a11',name:'Clementine Hayes', plays:156,hue:48, influence:.38},
-  {id:'a12',name:'Patchwork',        plays:67, hue:276,influence:.16},
-  {id:'a13',name:'River & Stone',    plays:445,hue:40, influence:.90},
-  {id:'a14',name:'Bright Archive',   plays:198,hue:100,influence:.48},
-  {id:'a15',name:'The Slow Dial',    plays:310,hue:220,influence:.75},
-  {id:'a16',name:'Cinnamon Static',  plays:89, hue:24, influence:.22},
-  {id:'a17',name:'Folded Map',       plays:130,hue:60, influence:.32},
-  {id:'a18',name:'Subway Hymn',      plays:267,hue:180,influence:.65},
-  {id:'a19',name:'Blue Volta',       plays:144,hue:240,influence:.35},
-  {id:'a20',name:'Salt & Ember',     plays:78, hue:350,influence:.19},
-  {id:'a21',name:'Tangerine Tape',   plays:222,hue:30, influence:.54},
-  {id:'a22',name:'Winter Garden',    plays:355,hue:200,influence:.86},
-  {id:'a23',name:'Kodachrome Kid',   plays:102,hue:50, influence:.25},
-  {id:'a24',name:'Glass Apartments', plays:176,hue:160,influence:.43},
-  {id:'a25',name:'Mile Marker',      plays:290,hue:280,influence:.70},
-  {id:'a26',name:'Quiet Season',     plays:134,hue:120,influence:.33},
-  {id:'a27',name:'Ferris Wheel',     plays:210,hue:320,influence:.51},
-  {id:'a28',name:'Neon Tiger',       plays:380,hue:340,influence:.92},
-  {id:'a29',name:'Wishing Well',     plays:45, hue:80, influence:.11},
-  {id:'a30',name:'Velvet Machine',   plays:167,hue:270,influence:.41},
-];
-
-const _W1=['Paper','Low Tide','Caramel','Gridlock','Melt','Static','Postcard','Cursive',
-  'Overgrown','Split','Lemon','Hollow','Morning','Evening','Winter','Summer','Velvet',
-  'Copper','Golden','Tangled','Floating','Glass','River','Echo','Smoke'];
-const _W2=['Moons','Lullaby','City','Choir','Slowly','Prayer','You','Sky',
-  'Highway','Grove','Hours','Road','Shore','Tide','Archive','Circuit','Letter',
-  'Season','Mirror','Garden','Bridge','Window','Train','Bell','Stone',
-  'Fire','Water','Night','Dream','Machine','Heat','Current','Drift','Frame','Wire',
-  'Loop','Trail','Hymn','Tape','Maps'];
-const _ALB=['Vol. 1','Vol. 2','Sessions','EP','Archives','Tapes','Works','Demos'];
-
-const SONGS=Array.from({length:200},(_,i)=>{
-  const art=ARTISTS[i%30];
-  return {
-    id:`s${i+1}`,
-    title:`${_W1[Math.floor(i/8)]} ${_W2[i%40]}`,
-    artist:art.name,
-    artistId:art.id,
-    album:`${art.name.split(' ')[0]} ${_ALB[Math.floor(i/25)%8]}`,
-    genreId:`g${(i%20)+1}`,
-    hue:(i*37+14)%360,
-    sat:50+(i*13)%30,
-    years:1+((i*7)%40)/10,
-    influence:Math.min(1,Math.round((0.05+((i*73+11)%97)/100)*100)/100),
-  };
-});
 
 // ── Helpers ──────────────────────────────────────────────────
 
@@ -101,10 +18,11 @@ function tierShort(t){
 
 // ── Primitives ───────────────────────────────────────────────
 
-function Img({id,size=56,r=8}){
+function Img({id,src,size=56,r=8}){
+  const url=src||`https://picsum.photos/seed/${id}/200`;
   return <div style={{width:size,height:size,borderRadius:r,flexShrink:0,overflow:'hidden',
     boxShadow:'inset 0 0 0 1px rgba(255,255,255,.06)'}}>
-    <img src={`https://picsum.photos/seed/${id}/200`} alt=""
+    <img src={url} alt=""
       style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
   </div>;
 }
@@ -171,7 +89,7 @@ function MiniPlayer({nowPlaying,isPlaying,progress,onToggle,onSeek}){
     background:'linear-gradient(90deg,#2A1E55,#3B2470)',
     display:'flex',alignItems:'center',padding:'0 10px',gap:10,
     boxShadow:'0 8px 28px rgba(0,0,0,.5)',zIndex:5}}>
-    <Img id={nowPlaying.id} size={40} r={6}/>
+    <Img id={nowPlaying.id} src={nowPlaying.artworkUrl} size={40} r={6}/>
     <div style={{flex:1,minWidth:0}}>
       <div style={{fontSize:13,fontWeight:700,color:CREAM,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{nowPlaying.title}</div>
       <div style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>{nowPlaying.artist}</div>
@@ -270,7 +188,7 @@ function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
                   display:'flex',alignItems:'center',justifyContent:'center'}}>
                   <Ic d={P.heart} sz={18} fill={CREAM} st={CREAM}/>
                 </div>
-              :<Img id={item.song.id} size={52} r={0}/>}
+              :<Img id={item.song.id} src={item.song.artworkUrl} size={52} r={0}/>}
             <div style={{flex:1,padding:'0 10px',fontSize:12,fontWeight:700,color:CREAM,
               overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{item.label}</div>
           </div>
@@ -280,7 +198,7 @@ function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
         {SONGS.slice(0,5).map(s=>(
           <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
-            <Img id={s.id} size={128} r={10}/>
+            <Img id={s.id} src={s.artworkUrl} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
             <div style={{fontSize:11,color:'rgba(245,239,224,.5)',marginTop:2,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.artist}</div>
           </div>
@@ -290,7 +208,7 @@ function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
         {SONGS.slice(5,10).map(s=>(
           <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
-            <Img id={s.id} size={128} r={10}/>
+            <Img id={s.id} src={s.artworkUrl} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
             <div style={{fontSize:11,color:'rgba(245,239,224,.5)',marginTop:2,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.artist}</div>
           </div>
@@ -341,7 +259,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audi
                 display:'flex',alignItems:'center',justifyContent:'center'}}>
                 <Ic d={P.heart} sz={72} fill={CREAM} st={CREAM}/>
               </div>
-            :<img src={`https://picsum.photos/seed/${seed}/400`} alt=""
+            :<img src={songs[0]?.artworkUrl||`https://picsum.photos/seed/${seed}/400`} alt=""
                style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
           }
         </div>
@@ -364,7 +282,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audi
       {/* controls row */}
       <div style={{padding:'8px 20px 16px',display:'flex',alignItems:'center',gap:16}}>
         <div style={{width:34,height:34,borderRadius:4,overflow:'hidden',flexShrink:0}}>
-          <img src={`https://picsum.photos/seed/${seed}/80`} alt=""
+          <img src={songs[0]?.artworkUrl||`https://picsum.photos/seed/${seed}/80`} alt=""
             style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
         </div>
         <Ic d={P.chk} sz={22} st='#1DB954' sw={2.5}/>
@@ -382,7 +300,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audi
       {/* song list */}
       {songs.map(s=>(
         <div key={s.id} onClick={()=>playSong(s)} style={{display:'flex',alignItems:'center',gap:12,padding:'8px 20px',cursor:'pointer'}}>
-          <Img id={s.id} size={50} r={4}/>
+          <Img id={s.id} src={s.artworkUrl} size={50} r={4}/>
           <div style={{flex:1,minWidth:0}}>
             <div style={{fontSize:14,fontWeight:600,color:CREAM,overflow:'hidden',
               textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
@@ -453,7 +371,7 @@ function HiFiLibraryScreen({onBack,onAlgo,audioProps}){
         {s:SONGS[9],t:'Cursive Sky',sub:'Album · The Usual Quiet'},
       ].map(({s,t,sub})=>(
         <div key={t} style={{display:'flex',alignItems:'center',gap:14,padding:'9px 20px'}}>
-          <Img id={s.id} size={52} r={8}/>
+          <Img id={s.id} src={s.artworkUrl} size={52} r={8}/>
           <div style={{flex:1,minWidth:0}}>
             <div style={{fontSize:14,fontWeight:600,color:CREAM,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{t}</div>
             <div style={{fontSize:12,color:'rgba(245,239,224,.5)',marginTop:2}}>{sub}</div>
@@ -573,7 +491,7 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
           label={s.title} sublabel={s.artist}
           influence={songInfluence[s.id]}
           tierLabel={influenceTier(songInfluence[s.id])}
-          artEl={<Img id={s.id} size={40} r={6}/>}
+          artEl={<Img id={s.id} src={s.artworkUrl} size={40} r={6}/>}
           onMore={()=>adjustSong(s.id,+0.12)}
           onLess={()=>adjustSong(s.id,-0.12)}/>
       ))}
@@ -644,7 +562,7 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
     touchAction:'none',cursor:isTop?'grab':'default',userSelect:'none',overflow:'hidden'}}>
     <div style={{position:'absolute',top:22,left:'50%',transform:'translateX(-50%)',
       width:195,height:195,borderRadius:16,overflow:'hidden',boxShadow:'0 10px 30px rgba(0,0,0,.5)'}}>
-      <Img id={song.id} size={195} r={16}/>
+      <Img id={song.id} src={song.artworkUrl} size={195} r={16}/>
     </div>
     <div style={{position:'absolute',left:22,right:22,top:234}}>
       <div style={{fontSize:20,lineHeight:1.15,color:CREAM,fontWeight:800,marginBottom:8}}>{song.title}</div>
@@ -899,28 +817,30 @@ export default function HiFiView(){
   const [playlistInfo,setPlaylistInfo]=useState(null);
 
   const audioRef    = useRef(null);
-  const previewUrls = useRef([]);
+  const previewUrls = useRef({});   // {trackId: previewUrl}
   const [nowPlaying,setNowPlaying] = useState(null);
   const [isPlaying, setIsPlaying]  = useState(false);
   const [progress,  setProgress]   = useState(0);
 
   useEffect(()=>{
-    const TERMS=['indie','electronic','soul','folk'];
-    const BASE='https://itunes.apple.com/search?media=music&limit=50&entity=song&term=';
+    // chunk into batches of 200 (iTunes lookup limit)
+    const ids=SONGS.map(s=>s.trackId);
+    const chunks=[];
+    for(let i=0;i<ids.length;i+=200) chunks.push(ids.slice(i,i+200));
     Promise.allSettled(
-      TERMS.map(t=>fetch(BASE+encodeURIComponent(t)).then(r=>r.json()).then(d=>d.results??[]))
+      chunks.map(chunk=>
+        fetch(`https://itunes.apple.com/lookup?id=${chunk.join(',')}`)
+          .then(r=>r.json()).then(d=>d.results??[])
+      )
     ).then(results=>{
-      const seen=new Set(), urls=[];
+      const map={};
       for(const r of results){
         if(r.status!=='fulfilled') continue;
-        for(const track of r.value){
-          if(track.previewUrl&&!seen.has(track.trackId)){
-            seen.add(track.trackId);
-            urls.push(track.previewUrl);
-          }
+        for(const t of r.value){
+          if(t.previewUrl) map[t.trackId]=t.previewUrl;
         }
       }
-      previewUrls.current=urls;
+      previewUrls.current=map;
     });
   },[]);
 
@@ -946,9 +866,7 @@ export default function HiFiView(){
 
   const playSong=(song)=>{
     if(!audioRef.current) return;
-    const idx=SONGS.findIndex(s=>s.id===song.id);
-    const urls=previewUrls.current;
-    const url=urls.length>0?urls[idx%urls.length]:null;
+    const url=previewUrls.current[song.trackId]??null;
     setNowPlaying(song);
     setProgress(0);
     if(!url) return;
