@@ -607,9 +607,10 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
 }
 
 function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreInfluence,adjustSong,adjustArtist,adjustGenre,playSong,audioProps}){
-  const N=SONGS.length;
+  const [shuffled]=useState(()=>[...SONGS].sort(()=>Math.random()-.5));
+  const N=shuffled.length;
   const [idx,setIdx]=useState(0);
-  const cur=SONGS[idx%N];
+  const cur=shuffled[idx%N];
   const next=()=>setIdx(i=>(i+1)%N);
 
   useEffect(()=>{ playSong&&playSong(cur); },[idx]);
@@ -645,7 +646,7 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
       </div>
     </div>
     {[0,1,2].map(off=>(
-      <HiFiSwipeCard key={SONGS[(idx+off)%N].id+String(off)} song={SONGS[(idx+off)%N]}
+      <HiFiSwipeCard key={shuffled[(idx+off)%N].id+String(off)} song={shuffled[(idx+off)%N]}
         zIndex={3-off} offset={off*14} isTop={off===0}
         songInfluence={songInfluence} artistInfluence={artistInfluence} genreInfluence={genreInfluence}
         onMore={off===0?handleMore:undefined}
