@@ -5,6 +5,13 @@ const BG='#0E0A1F',CREAM='#F5EFE0',LIME='#D4FF6B',CORAL='#FF6B57',VIOLET='#B7A8F
 
 // ── Helpers ──────────────────────────────────────────────────
 
+function rankSongs(songs,genreInf,artistInf,songInf){
+  return [...songs].sort((a,b)=>{
+    const score=s=>(genreInf[s.genreId]??0)*0.4+(artistInf[s.artistId]??0)*0.35+(songInf[s.id]??0)*0.25;
+    return score(b)-score(a);
+  });
+}
+
 function influenceTier(v){
   if(v>=0.65)return'Heavy Influence';
   if(v>=0.35)return'Medium Influence';
@@ -160,14 +167,15 @@ function AlgoToast({onTune}){
 
 // ── Screen 1: Home ───────────────────────────────────────────
 
-function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
+function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps,genreInfluence,artistInfluence,songInfluence}){
+  const ranked=rankSongs(SONGS,genreInfluence,artistInfluence,songInfluence);
   const quickItems=[
-    {label:'Liked Songs',    song:SONGS[0],liked:true},
-    {label:'Discover Weekly',song:SONGS[1]},
-    {label:'Made For You',   song:SONGS[2]},
-    {label:'Daily Mix 1',    song:SONGS[3]},
-    {label:'Release Radar',  song:SONGS[4]},
-    {label:'Chill Vibes',    song:SONGS[5]},
+    {label:'Liked Songs',    song:ranked[0],liked:true},
+    {label:'Discover Weekly',song:ranked[1]},
+    {label:'Made For You',   song:ranked[2]},
+    {label:'Daily Mix 1',    song:ranked[3]},
+    {label:'Release Radar',  song:ranked[4]},
+    {label:'Chill Vibes',    song:ranked[5]},
   ];
   return <Shell>
     <div style={{position:'absolute',inset:0,overflowY:'auto',paddingBottom:148,scrollbarWidth:'none'}}>
@@ -196,7 +204,7 @@ function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
       </div>
       <div style={{padding:'2px 20px 12px',fontSize:16,fontWeight:800,color:CREAM}}>Jump back in</div>
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
-        {SONGS.slice(0,5).map(s=>(
+        {ranked.slice(0,5).map(s=>(
           <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
             <Img id={s.id} src={s.artworkUrl} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
@@ -206,7 +214,7 @@ function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
       </div>
       <div style={{padding:'2px 20px 12px',fontSize:16,fontWeight:800,color:CREAM}}>Made for you</div>
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
-        {SONGS.slice(5,10).map(s=>(
+        {ranked.slice(5,10).map(s=>(
           <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
             <Img id={s.id} src={s.artworkUrl} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
@@ -231,7 +239,7 @@ const PLAYLIST_DESCS={
   'Chill Vibes':'Easy listening for any moment.',
 };
 
-function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audioProps}){
+function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onLibrary,onAlgo,playSong,audioProps}){
   const seedIdx=SONGS.findIndex(s=>s.id===seed);
   const songs=Array.from({length:20},(_,i)=>SONGS[(seedIdx+i*9+i)%SONGS.length]);
   const desc=PLAYLIST_DESCS[label]||'A playlist made for you.';
@@ -313,7 +321,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audi
     </div>
     {isAlgo&&<AlgoToast onTune={onAlgo}/>}
     <MiniPlayer {...audioProps}/>
-    <HiFiTabBar active='home' onHome={onBack}/>
+    <HiFiTabBar active='home' onHome={onBack} onLibrary={onLibrary}/>
   </Shell>;
 }
 
@@ -817,32 +825,9 @@ export default function HiFiView(){
   const [playlistInfo,setPlaylistInfo]=useState(null);
 
   const audioRef    = useRef(null);
-  const previewUrls = useRef({});   // {trackId: previewUrl}
   const [nowPlaying,setNowPlaying] = useState(null);
   const [isPlaying, setIsPlaying]  = useState(false);
   const [progress,  setProgress]   = useState(0);
-
-  useEffect(()=>{
-    // chunk into batches of 200 (iTunes lookup limit)
-    const ids=SONGS.map(s=>s.trackId);
-    const chunks=[];
-    for(let i=0;i<ids.length;i+=200) chunks.push(ids.slice(i,i+200));
-    Promise.allSettled(
-      chunks.map(chunk=>
-        fetch(`https://itunes.apple.com/lookup?id=${chunk.join(',')}`)
-          .then(r=>r.json()).then(d=>d.results??[])
-      )
-    ).then(results=>{
-      const map={};
-      for(const r of results){
-        if(r.status!=='fulfilled') continue;
-        for(const t of r.value){
-          if(t.previewUrl) map[t.trackId]=t.previewUrl;
-        }
-      }
-      previewUrls.current=map;
-    });
-  },[]);
 
   useEffect(()=>{
     const audio=new Audio();
@@ -866,7 +851,7 @@ export default function HiFiView(){
 
   const playSong=(song)=>{
     if(!audioRef.current) return;
-    const url=previewUrls.current[song.trackId]??null;
+    const url=song.previewUrl||null;
     setNowPlaying(song);
     setProgress(0);
     if(!url) return;
@@ -908,8 +893,8 @@ export default function HiFiView(){
   return (
     <div style={{width:'100%',height:'100%',background:'#000',
       display:'flex',alignItems:'center',justifyContent:'center'}}>
-      {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')} onPlaylist={openPlaylist} playSong={playSong} audioProps={audioProps}/>}
-      {screen==='playlist'&&playlistInfo&&<HiFiPlaylistScreen {...playlistInfo} onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} playSong={playSong} audioProps={audioProps}/>}
+      {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')} onPlaylist={openPlaylist} playSong={playSong} audioProps={audioProps} genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}/>}
+      {screen==='playlist'&&playlistInfo&&<HiFiPlaylistScreen {...playlistInfo} onBack={()=>setScreen('home')} onLibrary={()=>setScreen('library')} onAlgo={()=>setScreen('algo')} playSong={playSong} audioProps={audioProps}/>}
       {screen==='library'&&<HiFiLibraryScreen onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} audioProps={audioProps}/>}
       {screen==='algo'&&<HiFiAlgorithmDashboard
         onBack={()=>setScreen('library')} onTuning={goToTuning}

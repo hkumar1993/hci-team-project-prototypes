@@ -107,6 +107,7 @@ async function main() {
       influence:  Math.min(0.99, Math.max(0.01,
                     Math.round((0.05 + ((tid * 73 + 11) % 97) / 100) * 100) / 100)),
       artworkUrl,
+      previewUrl: track.previewUrl ?? '',
     };
   });
 
