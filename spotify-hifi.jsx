@@ -119,6 +119,9 @@ const P={home:'M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z',
   heart:'M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.65-9.5 9-9.5 9z',
   slid:['M4 6h10','M18 6h2','M4 12h4','M12 12h8','M4 18h14','M18 18h2','M16 4v4','M10 10v4','M16 16v4'],
   chk:'M5 12l5 5L20 7',
+  more:['M5 12h.01','M12 12h.01','M19 12h.01'],
+  shuf:['M16 3h5v5','M21 3l-7 7','M3 21l7-7','M21 21h-5v-5'],
+  dl:['M12 3v12','M7 10l5 5 5-5','M4 21h16'],
 };
 
 const Ic=({d,sz=20,st=CREAM,fill='none',sw=1.8})=>(
@@ -162,23 +165,25 @@ function Shell({children}){
   </div>;
 }
 
-function MiniPlayer(){
-  const s=SONGS[0];
+function MiniPlayer({nowPlaying,isPlaying,progress,onToggle,onSeek}){
+  if(!nowPlaying) return null;
   return <div style={{position:'absolute',left:8,right:8,bottom:76,height:56,borderRadius:14,
     background:'linear-gradient(90deg,#2A1E55,#3B2470)',
     display:'flex',alignItems:'center',padding:'0 10px',gap:10,
     boxShadow:'0 8px 28px rgba(0,0,0,.5)',zIndex:5}}>
-    <Img id={s.id} size={40} r={6}/>
+    <Img id={nowPlaying.id} size={40} r={6}/>
     <div style={{flex:1,minWidth:0}}>
-      <div style={{fontSize:13,fontWeight:700,color:CREAM,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{s.title}</div>
-      <div style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>{s.artist}</div>
+      <div style={{fontSize:13,fontWeight:700,color:CREAM,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{nowPlaying.title}</div>
+      <div style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>{nowPlaying.artist}</div>
     </div>
     <div style={{display:'flex',alignItems:'center',gap:12}}>
       <Ic d={P.heart} sz={18} fill={CORAL} st={CORAL}/>
-      <Ic d={P.pause} sz={18} sw={2.4}/>
+      <div onClick={onToggle} style={{cursor:'pointer'}}>
+        <Ic d={isPlaying?P.pause:P.play} sz={18} sw={2.4}/>
+      </div>
     </div>
-    <div style={{position:'absolute',left:10,right:10,bottom:4,height:2,background:'rgba(245,239,224,.15)',borderRadius:1,overflow:'hidden'}}>
-      <div style={{width:'34%',height:'100%',background:CREAM}}/>
+    <div onClick={onSeek} style={{position:'absolute',left:10,right:10,bottom:4,height:6,background:'rgba(245,239,224,.15)',borderRadius:3,overflow:'hidden',cursor:'pointer'}}>
+      <div style={{width:`${Math.round(progress*100)}%`,height:'100%',background:CREAM,borderRadius:3,transition:'width 200ms linear'}}/>
     </div>
   </div>;
 }
@@ -203,9 +208,41 @@ function HiFiTabBar({active='home',onHome,onLibrary}){
   </div>;
 }
 
+// ── Toast ─────────────────────────────────────────────────────
+
+function AlgoToast({onTune}){
+  const [show,setShow]=useState(false);
+  useEffect(()=>{
+    const t1=setTimeout(()=>setShow(true),60);
+    const t2=setTimeout(()=>setShow(false),5500);
+    return()=>{clearTimeout(t1);clearTimeout(t2);};
+  },[]);
+  return(
+    <div onClick={()=>{setShow(false);onTune();}} style={{
+      position:'absolute',bottom:150,left:14,right:14,zIndex:10,cursor:'pointer',
+      background:'rgba(14,10,31,0.93)',border:'1px solid rgba(183,168,255,.4)',
+      borderRadius:14,padding:'13px 16px',
+      display:'flex',alignItems:'center',gap:12,
+      transition:'opacity 280ms,transform 280ms',
+      opacity:show?1:0,transform:show?'translateY(0)':'translateY(16px)',
+      pointerEvents:show?'auto':'none',
+    }}>
+      <div style={{width:36,height:36,borderRadius:10,flexShrink:0,
+        background:'rgba(183,168,255,.15)',
+        display:'flex',alignItems:'center',justifyContent:'center'}}>
+        <Ic d={P.slid} sz={18} st={VIOLET}/>
+      </div>
+      <div style={{flex:1,minWidth:0}}>
+        <div style={{fontSize:13,color:CREAM,fontWeight:600,lineHeight:1.3}}>Not feeling these songs?</div>
+        <div style={{fontSize:12,color:VIOLET,fontWeight:700,marginTop:2}}>Tune your algorithm →</div>
+      </div>
+    </div>
+  );
+}
+
 // ── Screen 1: Home ───────────────────────────────────────────
 
-function HiFiHomeScreen({onLibrary}){
+function HiFiHomeScreen({onLibrary,onPlaylist,playSong,audioProps}){
   const quickItems=[
     {label:'Liked Songs',    song:SONGS[0],liked:true},
     {label:'Discover Weekly',song:SONGS[1]},
@@ -222,8 +259,11 @@ function HiFiHomeScreen({onLibrary}){
       </div>
       <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,padding:'0 12px 22px'}}>
         {quickItems.map(item=>(
-          <div key={item.label} style={{height:52,borderRadius:8,overflow:'hidden',
-            background:'rgba(245,239,224,.07)',display:'flex',alignItems:'center'}}>
+          <div key={item.label}
+            onClick={()=>onPlaylist(item)}
+            style={{height:52,borderRadius:8,overflow:'hidden',
+              background:'rgba(245,239,224,.07)',display:'flex',alignItems:'center',
+              cursor:'pointer'}}>
             {item.liked
               ?<div style={{width:52,height:52,flexShrink:0,
                   background:'linear-gradient(145deg,#8ba6ff,#2B1F5E)',
@@ -239,7 +279,7 @@ function HiFiHomeScreen({onLibrary}){
       <div style={{padding:'2px 20px 12px',fontSize:16,fontWeight:800,color:CREAM}}>Jump back in</div>
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
         {SONGS.slice(0,5).map(s=>(
-          <div key={s.id} style={{flexShrink:0,width:128}}>
+          <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
             <Img id={s.id} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
             <div style={{fontSize:11,color:'rgba(245,239,224,.5)',marginTop:2,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.artist}</div>
@@ -249,7 +289,7 @@ function HiFiHomeScreen({onLibrary}){
       <div style={{padding:'2px 20px 12px',fontSize:16,fontWeight:800,color:CREAM}}>Made for you</div>
       <div style={{display:'flex',gap:12,overflowX:'auto',padding:'0 20px 22px',scrollbarWidth:'none'}}>
         {SONGS.slice(5,10).map(s=>(
-          <div key={s.id} style={{flexShrink:0,width:128}}>
+          <div key={s.id} onClick={()=>playSong(s)} style={{flexShrink:0,width:128,cursor:'pointer'}}>
             <Img id={s.id} size={128} r={10}/>
             <div style={{fontSize:12,fontWeight:600,color:CREAM,marginTop:7,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
             <div style={{fontSize:11,color:'rgba(245,239,224,.5)',marginTop:2,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.artist}</div>
@@ -257,14 +297,111 @@ function HiFiHomeScreen({onLibrary}){
         ))}
       </div>
     </div>
-    <MiniPlayer/>
+    <MiniPlayer {...audioProps}/>
     <HiFiTabBar active='home' onLibrary={onLibrary}/>
   </Shell>;
 }
 
-// ── Screen 2: Library ────────────────────────────────────────
+// ── Screen 2: Playlist ───────────────────────────────────────
 
-function HiFiLibraryScreen({onBack,onAlgo}){
+const PLAYLIST_DESCS={
+  'Discover Weekly':'Your weekly mixtape of fresh music. New discoveries and deep cuts picked just for you. Updated every Monday.',
+  'Release Radar':'Catch all the latest music from artists you follow, plus new picks for you. Updated every Friday.',
+  'Made For You':'A daily mix of songs you love and new tracks we think you\'ll like.',
+  'Daily Mix 1':'Familiar favorites mixed with similar artists you might not have heard yet.',
+  'Liked Songs':'Songs you\'ve saved from across Spotify.',
+  'Chill Vibes':'Easy listening for any moment.',
+};
+
+function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onAlgo,playSong,audioProps}){
+  const seedIdx=SONGS.findIndex(s=>s.id===seed);
+  const songs=Array.from({length:20},(_,i)=>SONGS[(seedIdx+i*9+i)%SONGS.length]);
+  const desc=PLAYLIST_DESCS[label]||'A playlist made for you.';
+  const stats=isAlgo?'Updated weekly • 2h 28min':'2,091 songs • 5 days 4 hr';
+
+  return <Shell>
+    <div style={{position:'absolute',inset:0,overflowY:'auto',paddingBottom:148,scrollbarWidth:'none'}}>
+      {/* back button — sticky overlay */}
+      <div style={{position:'sticky',top:0,zIndex:9,padding:'52px 20px 8px',
+        background:`linear-gradient(to bottom,${BG} 50%,transparent)`,pointerEvents:'none'}}>
+        <div onClick={onBack} style={{width:32,height:32,borderRadius:16,cursor:'pointer',
+          background:'rgba(14,10,31,.55)',backdropFilter:'blur(6px)',pointerEvents:'auto',
+          display:'inline-flex',alignItems:'center',justifyContent:'center'}}>
+          <Ic d={P.back} sz={20}/>
+        </div>
+      </div>
+
+      {/* hero image */}
+      <div style={{padding:'0 36px 22px',marginTop:'-12px'}}>
+        <div style={{width:'100%',aspectRatio:'1',borderRadius:6,overflow:'hidden',
+          boxShadow:'0 12px 40px rgba(0,0,0,.65)'}}>
+          {liked
+            ?<div style={{width:'100%',height:'100%',
+                background:'linear-gradient(145deg,#8ba6ff,#2B1F5E)',
+                display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <Ic d={P.heart} sz={72} fill={CREAM} st={CREAM}/>
+              </div>
+            :<img src={`https://picsum.photos/seed/${seed}/400`} alt=""
+               style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+          }
+        </div>
+      </div>
+
+      {/* info */}
+      <div style={{padding:'0 20px 10px'}}>
+        <div style={{fontSize:22,fontWeight:800,color:CREAM,letterSpacing:-.3,marginBottom:6}}>{label}</div>
+        <div style={{fontSize:13,color:'rgba(245,239,224,.5)',lineHeight:1.4,marginBottom:10}}>{desc}</div>
+        <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:4}}>
+          <div style={{width:22,height:22,borderRadius:11,background:'#1DB954',flexShrink:0,
+            display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <span style={{color:'#000',fontSize:11,fontWeight:900,lineHeight:1}}>♪</span>
+          </div>
+          <span style={{fontSize:13,fontWeight:700,color:CREAM}}>Spotify</span>
+        </div>
+        <div style={{fontSize:12,color:'rgba(245,239,224,.4)'}}>{stats}</div>
+      </div>
+
+      {/* controls row */}
+      <div style={{padding:'8px 20px 16px',display:'flex',alignItems:'center',gap:16}}>
+        <div style={{width:34,height:34,borderRadius:4,overflow:'hidden',flexShrink:0}}>
+          <img src={`https://picsum.photos/seed/${seed}/80`} alt=""
+            style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+        </div>
+        <Ic d={P.chk} sz={22} st='#1DB954' sw={2.5}/>
+        <Ic d={P.dl} sz={20} st='rgba(245,239,224,.55)'/>
+        <Ic d={P.more} sz={20} st='rgba(245,239,224,.55)'/>
+        <div style={{flex:1}}/>
+        <Ic d={P.shuf} sz={22} st='rgba(245,239,224,.45)'/>
+        <div onClick={()=>playSong(songs[0])} style={{width:52,height:52,borderRadius:26,background:'#1DB954',flexShrink:0,
+          display:'flex',alignItems:'center',justifyContent:'center',
+          boxShadow:'0 4px 20px rgba(29,185,84,.35)',cursor:'pointer'}}>
+          <Ic d={P.play} sz={22} fill='#000' st='#000'/>
+        </div>
+      </div>
+
+      {/* song list */}
+      {songs.map(s=>(
+        <div key={s.id} onClick={()=>playSong(s)} style={{display:'flex',alignItems:'center',gap:12,padding:'8px 20px',cursor:'pointer'}}>
+          <Img id={s.id} size={50} r={4}/>
+          <div style={{flex:1,minWidth:0}}>
+            <div style={{fontSize:14,fontWeight:600,color:CREAM,overflow:'hidden',
+              textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.title}</div>
+            <div style={{fontSize:12,color:'rgba(245,239,224,.5)',marginTop:2,overflow:'hidden',
+              textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{s.artist}</div>
+          </div>
+          <Ic d={P.more} sz={16} st='rgba(245,239,224,.3)'/>
+        </div>
+      ))}
+    </div>
+    {isAlgo&&<AlgoToast onTune={onAlgo}/>}
+    <MiniPlayer {...audioProps}/>
+    <HiFiTabBar active='home' onHome={onBack}/>
+  </Shell>;
+}
+
+// ── Screen 3: Library ────────────────────────────────────────
+
+function HiFiLibraryScreen({onBack,onAlgo,audioProps}){
   return <Shell>
     <div style={{position:'absolute',inset:0,overflowY:'auto',paddingBottom:148,scrollbarWidth:'none'}}>
       <div style={{padding:'50px 20px 0'}}>
@@ -324,7 +461,7 @@ function HiFiLibraryScreen({onBack,onAlgo}){
         </div>
       ))}
     </div>
-    <MiniPlayer/>
+    <MiniPlayer {...audioProps}/>
     <HiFiTabBar active='library' onHome={onBack}/>
   </Shell>;
 }
@@ -454,7 +591,7 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
 
 // ── Screen 4: Guided Tuning ──────────────────────────────────
 
-function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfluence,genreInfluence,onMore,onLess}){
+function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfluence,genreInfluence,onMore,onLess,isPlaying=false,progress=0,onToggle}){
   const [drag,setDrag]=useState({x:0,y:0});
   const [exit,setExit]=useState(null);
   const startRef=useRef(null);
@@ -525,14 +662,14 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
       </div>
     </div>
     <div style={{position:'absolute',left:22,right:22,bottom:18,display:'flex',alignItems:'center',gap:10}}>
-      <div style={{width:30,height:30,borderRadius:15,background:'rgba(245,239,224,.12)',
-        display:'flex',alignItems:'center',justifyContent:'center'}}>
-        <Ic d={P.play} sz={13} fill={CREAM} st={CREAM} sw={0}/>
+      <div onClick={isTop?onToggle:undefined} style={{width:30,height:30,borderRadius:15,background:'rgba(245,239,224,.12)',
+        display:'flex',alignItems:'center',justifyContent:'center',cursor:isTop?'pointer':'default'}}>
+        <Ic d={isPlaying?P.pause:P.play} sz={13} fill={CREAM} st={CREAM} sw={0}/>
       </div>
       <div style={{flex:1,height:2,background:'rgba(245,239,224,.2)',borderRadius:1,overflow:'hidden'}}>
-        <div style={{width:'22%',height:'100%',background:CREAM}}/>
+        <div style={{width:`${Math.round(progress*100)}%`,height:'100%',background:CREAM,transition:'width 200ms linear'}}/>
       </div>
-      <span style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>0:42</span>
+      <span style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>0:{String(Math.round(progress*30)).padStart(2,'0')}</span>
     </div>
     <div style={{position:'absolute',top:18,left:14,padding:'4px 10px',borderRadius:7,
       border:`2.5px solid ${CORAL}`,color:CORAL,fontSize:13,fontWeight:900,letterSpacing:1.5,
@@ -543,11 +680,13 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
   </div>;
 }
 
-function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreInfluence,adjustSong,adjustArtist,adjustGenre}){
+function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreInfluence,adjustSong,adjustArtist,adjustGenre,playSong,audioProps}){
   const N=SONGS.length;
   const [idx,setIdx]=useState(0);
   const cur=SONGS[idx%N];
   const next=()=>setIdx(i=>(i+1)%N);
+
+  useEffect(()=>{ playSong&&playSong(cur); },[idx]);
 
   const handleMore=()=>{
     adjustSong(cur.id,+0.10);
@@ -584,7 +723,10 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
         zIndex={3-off} offset={off*14} isTop={off===0}
         songInfluence={songInfluence} artistInfluence={artistInfluence} genreInfluence={genreInfluence}
         onMore={off===0?handleMore:undefined}
-        onLess={off===0?handleLess:undefined}/>
+        onLess={off===0?handleLess:undefined}
+        isPlaying={off===0?audioProps?.isPlaying:false}
+        progress={off===0?audioProps?.progress:0}
+        onToggle={off===0?audioProps?.onToggle:undefined}/>
     ))}
     <div style={{position:'absolute',bottom:94,left:24,right:24,zIndex:5,display:'flex',gap:14}}>
       <div onClick={handleLess} style={{flex:1,height:52,borderRadius:14,
@@ -754,6 +896,85 @@ export default function HiFiView(){
 
   const [screen,setScreen]=useState('home');
   const [snapshot,setSnapshot]=useState(null);
+  const [playlistInfo,setPlaylistInfo]=useState(null);
+
+  const audioRef    = useRef(null);
+  const previewUrls = useRef([]);
+  const [nowPlaying,setNowPlaying] = useState(null);
+  const [isPlaying, setIsPlaying]  = useState(false);
+  const [progress,  setProgress]   = useState(0);
+
+  useEffect(()=>{
+    const TERMS=['indie','electronic','soul','folk'];
+    const BASE='https://itunes.apple.com/search?media=music&limit=50&entity=song&term=';
+    Promise.allSettled(
+      TERMS.map(t=>fetch(BASE+encodeURIComponent(t)).then(r=>r.json()).then(d=>d.results??[]))
+    ).then(results=>{
+      const seen=new Set(), urls=[];
+      for(const r of results){
+        if(r.status!=='fulfilled') continue;
+        for(const track of r.value){
+          if(track.previewUrl&&!seen.has(track.trackId)){
+            seen.add(track.trackId);
+            urls.push(track.previewUrl);
+          }
+        }
+      }
+      previewUrls.current=urls;
+    });
+  },[]);
+
+  useEffect(()=>{
+    const audio=new Audio();
+    audioRef.current=audio;
+    const onTimeUpdate=()=>{ if(audio.duration) setProgress(audio.currentTime/audio.duration); };
+    const onEnded =()=>{ setIsPlaying(false); setProgress(0); };
+    const onPlay  =()=>setIsPlaying(true);
+    const onPause =()=>setIsPlaying(false);
+    audio.addEventListener('timeupdate',onTimeUpdate);
+    audio.addEventListener('ended',onEnded);
+    audio.addEventListener('play',onPlay);
+    audio.addEventListener('pause',onPause);
+    return ()=>{
+      audio.pause();
+      audio.removeEventListener('timeupdate',onTimeUpdate);
+      audio.removeEventListener('ended',onEnded);
+      audio.removeEventListener('play',onPlay);
+      audio.removeEventListener('pause',onPause);
+    };
+  },[]);
+
+  const playSong=(song)=>{
+    if(!audioRef.current) return;
+    const idx=SONGS.findIndex(s=>s.id===song.id);
+    const urls=previewUrls.current;
+    const url=urls.length>0?urls[idx%urls.length]:null;
+    setNowPlaying(song);
+    setProgress(0);
+    if(!url) return;
+    audioRef.current.pause();
+    audioRef.current.src=url;
+    audioRef.current.currentTime=0;
+    audioRef.current.play().catch(()=>{});
+  };
+
+  const togglePlay=()=>{
+    if(!audioRef.current||!nowPlaying) return;
+    isPlaying?audioRef.current.pause():audioRef.current.play().catch(()=>{});
+  };
+
+  const seekTo=(e)=>{
+    if(!audioRef.current||!nowPlaying) return;
+    const rect=e.currentTarget.getBoundingClientRect();
+    const ratio=(e.clientX-rect.left)/rect.width;
+    if(audioRef.current.duration) audioRef.current.currentTime=ratio*audioRef.current.duration;
+  };
+
+  const ALGO_LIBS=new Set(['Discover Weekly','Release Radar','Made For You','Daily Mix 1']);
+  const openPlaylist=item=>{
+    setPlaylistInfo({label:item.label,isAlgo:ALGO_LIBS.has(item.label),seed:item.song.id,liked:!!item.liked});
+    setScreen('playlist');
+  };
 
   const goToTuning=()=>{
     setSnapshot({
@@ -764,11 +985,14 @@ export default function HiFiView(){
     setScreen('tuning');
   };
 
+  const audioProps={nowPlaying,isPlaying,progress,onToggle:togglePlay,onSeek:seekTo};
+
   return (
     <div style={{width:'100%',height:'100%',background:'#000',
       display:'flex',alignItems:'center',justifyContent:'center'}}>
-      {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')}/>}
-      {screen==='library'&&<HiFiLibraryScreen onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')}/>}
+      {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')} onPlaylist={openPlaylist} playSong={playSong} audioProps={audioProps}/>}
+      {screen==='playlist'&&playlistInfo&&<HiFiPlaylistScreen {...playlistInfo} onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} playSong={playSong} audioProps={audioProps}/>}
+      {screen==='library'&&<HiFiLibraryScreen onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} audioProps={audioProps}/>}
       {screen==='algo'&&<HiFiAlgorithmDashboard
         onBack={()=>setScreen('library')} onTuning={goToTuning}
         genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
@@ -776,7 +1000,8 @@ export default function HiFiView(){
       {screen==='tuning'&&<HiFiGuidedTuning
         onBack={()=>setScreen('algo')} onFinish={()=>setScreen('summary')}
         songInfluence={songInfluence} artistInfluence={artistInfluence} genreInfluence={genreInfluence}
-        adjustSong={adjustSong} adjustArtist={adjustArtist} adjustGenre={adjustGenre}/>}
+        adjustSong={adjustSong} adjustArtist={adjustArtist} adjustGenre={adjustGenre}
+        playSong={playSong} audioProps={audioProps}/>}
       {screen==='summary'&&snapshot&&<HiFiTuningSummary
         snapshot={snapshot}
         genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
