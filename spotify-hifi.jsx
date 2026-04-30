@@ -47,6 +47,8 @@ const P={home:'M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z',
   more:['M5 12h.01','M12 12h.01','M19 12h.01'],
   shuf:['M16 3h5v5','M21 3l-7 7','M3 21l7-7','M21 21h-5v-5'],
   dl:['M12 3v12','M7 10l5 5 5-5','M4 21h16'],
+  skipf:['M5 4l10 8-10 8V4','M19 4v16'],
+  skipb:['M19 4l-10 8 10 8V4','M5 4v16'],
 };
 
 const Ic=({d,sz=20,st=CREAM,fill='none',sw=1.8})=>(
@@ -90,7 +92,7 @@ function Shell({children}){
   </div>;
 }
 
-function MiniPlayer({nowPlaying,isPlaying,progress,onToggle,onSeek}){
+function MiniPlayer({nowPlaying,isPlaying,progress,onToggle,onSeek,onNext,onPrev}){
   if(!nowPlaying) return null;
   return <div style={{position:'absolute',left:8,right:8,bottom:76,height:56,borderRadius:14,
     background:'linear-gradient(90deg,#2A1E55,#3B2470)',
@@ -101,10 +103,15 @@ function MiniPlayer({nowPlaying,isPlaying,progress,onToggle,onSeek}){
       <div style={{fontSize:13,fontWeight:700,color:CREAM,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{nowPlaying.title}</div>
       <div style={{fontSize:11,color:'rgba(245,239,224,.6)'}}>{nowPlaying.artist}</div>
     </div>
-    <div style={{display:'flex',alignItems:'center',gap:12}}>
-      <Ic d={P.heart} sz={18} fill={CORAL} st={CORAL}/>
+    <div style={{display:'flex',alignItems:'center',gap:14}}>
+      <div onClick={onPrev} style={{cursor:'pointer',opacity:.75}}>
+        <Ic d={P.skipb} sz={16} sw={2.2}/>
+      </div>
       <div onClick={onToggle} style={{cursor:'pointer'}}>
         <Ic d={isPlaying?P.pause:P.play} sz={18} sw={2.4}/>
+      </div>
+      <div onClick={onNext} style={{cursor:'pointer',opacity:.75}}>
+        <Ic d={P.skipf} sz={16} sw={2.2}/>
       </div>
     </div>
     <div onClick={onSeek} style={{position:'absolute',left:10,right:10,bottom:4,height:6,background:'rgba(245,239,224,.15)',borderRadius:3,overflow:'hidden',cursor:'pointer'}}>
@@ -610,6 +617,8 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
   const [shuffled]=useState(()=>[...SONGS].sort(()=>Math.random()-.5));
   const N=shuffled.length;
   const [idx,setIdx]=useState(0);
+  const [swipeCount,setSwipeCount]=useState(0);
+  const [showMilestone,setShowMilestone]=useState(false);
   const cur=shuffled[idx%N];
   const next=()=>setIdx(i=>(i+1)%N);
 
@@ -620,12 +629,14 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
     adjustArtist(cur.artistId,+0.06);
     adjustGenre(cur.genreId,+0.04);
     next();
+    const nc=swipeCount+1; setSwipeCount(nc); if(nc===20) setShowMilestone(true);
   };
   const handleLess=()=>{
     adjustSong(cur.id,-0.10);
     adjustArtist(cur.artistId,-0.06);
     adjustGenre(cur.genreId,-0.04);
     next();
+    const nc=swipeCount+1; setSwipeCount(nc); if(nc===20) setShowMilestone(true);
   };
 
   return <Shell>
@@ -634,15 +645,11 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
       transition:'background 480ms ease'}}/>
     <div style={{position:'absolute',top:50,left:20,right:20,
       display:'flex',alignItems:'center',justifyContent:'space-between',zIndex:5}}>
-      <div onClick={onBack} style={{display:'flex',alignItems:'center',gap:6,cursor:'pointer',
-        padding:'7px 12px',borderRadius:999,background:'rgba(0,0,0,.4)',color:CREAM}}>
-        <Ic d={P.back} sz={14} sw={2.2}/><span style={{fontSize:12,fontWeight:700}}>Back</span>
-      </div>
       <span style={{fontSize:11,color:'rgba(245,239,224,.5)',fontWeight:700,letterSpacing:1.2,textTransform:'uppercase'}}>Guided Tuning</span>
       <div onClick={onFinish} style={{display:'flex',alignItems:'center',gap:6,cursor:'pointer',
         padding:'7px 12px',borderRadius:999,background:`rgba(212,255,107,.18)`,color:LIME,
         border:`1px solid rgba(212,255,107,.4)`}}>
-        <span style={{fontSize:12,fontWeight:700}}>Finish</span>
+        <span style={{fontSize:12,fontWeight:700}}>Finish Tuning</span>
       </div>
     </div>
     {[0,1,2].map(off=>(
@@ -667,6 +674,25 @@ function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreIn
         <span style={{fontSize:14,fontWeight:800,color:LIME,letterSpacing:.3}}>More of this</span>
       </div>
     </div>
+    {showMilestone&&<div style={{position:'absolute',inset:0,background:'rgba(14,10,31,.85)',
+      display:'flex',alignItems:'center',justifyContent:'center',zIndex:20,padding:'0 28px'}}>
+      <div style={{background:'#1a1535',borderRadius:20,padding:'32px 24px',
+        textAlign:'center',border:'1px solid rgba(183,168,255,.25)'}}>
+        <div style={{fontSize:28,marginBottom:8}}>🎉</div>
+        <div style={{color:CREAM,fontWeight:700,fontSize:18,marginBottom:10}}>Look at you go!</div>
+        <div style={{color:'rgba(245,239,224,.65)',fontSize:14,lineHeight:1.5,marginBottom:24}}>
+          You can continue to tune or stop here and come back later.
+        </div>
+        <div style={{display:'flex',gap:12}}>
+          <div onClick={onFinish} style={{flex:1,padding:'12px 0',borderRadius:999,textAlign:'center',
+            background:'rgba(212,255,107,.18)',border:'1px solid rgba(212,255,107,.4)',
+            color:LIME,fontWeight:700,fontSize:14,cursor:'pointer'}}>Stop here</div>
+          <div onClick={()=>setShowMilestone(false)} style={{flex:1,padding:'12px 0',borderRadius:999,
+            textAlign:'center',background:'rgba(245,239,224,.12)',color:CREAM,
+            fontWeight:700,fontSize:14,cursor:'pointer'}}>Continue</div>
+        </div>
+      </div>
+    </div>}
   </Shell>;
 }
 
@@ -825,7 +851,8 @@ export default function HiFiView(){
   const [snapshot,setSnapshot]=useState(null);
   const [playlistInfo,setPlaylistInfo]=useState(null);
 
-  const audioRef    = useRef(null);
+  const audioRef      = useRef(null);
+  const nowPlayingRef = useRef(null);
   const [nowPlaying,setNowPlaying] = useState(null);
   const [isPlaying, setIsPlaying]  = useState(false);
   const [progress,  setProgress]   = useState(0);
@@ -834,7 +861,17 @@ export default function HiFiView(){
     const audio=new Audio();
     audioRef.current=audio;
     const onTimeUpdate=()=>{ if(audio.duration) setProgress(audio.currentTime/audio.duration); };
-    const onEnded =()=>{ setIsPlaying(false); setProgress(0); };
+    const onEnded =()=>{
+      const cur=nowPlayingRef.current;
+      if(cur){
+        const i=SONGS.findIndex(s=>s.id===cur.id);
+        const nextSong=SONGS[(i+1)%SONGS.length];
+        nowPlayingRef.current=nextSong;
+        setNowPlaying(nextSong);
+        setProgress(0);
+        if(nextSong.previewUrl&&audio){ audio.src=nextSong.previewUrl; audio.currentTime=0; audio.play().catch(()=>{}); }
+      } else { setIsPlaying(false); setProgress(0); }
+    };
     const onPlay  =()=>setIsPlaying(true);
     const onPause =()=>setIsPlaying(false);
     audio.addEventListener('timeupdate',onTimeUpdate);
@@ -852,6 +889,7 @@ export default function HiFiView(){
 
   const playSong=(song)=>{
     if(!audioRef.current) return;
+    nowPlayingRef.current=song;
     const url=song.previewUrl||null;
     setNowPlaying(song);
     setProgress(0);
@@ -865,6 +903,16 @@ export default function HiFiView(){
   const togglePlay=()=>{
     if(!audioRef.current||!nowPlaying) return;
     isPlaying?audioRef.current.pause():audioRef.current.play().catch(()=>{});
+  };
+  const playNext=()=>{
+    if(!nowPlaying) return;
+    const i=SONGS.findIndex(s=>s.id===nowPlaying.id);
+    playSong(SONGS[(i+1)%SONGS.length]);
+  };
+  const playPrev=()=>{
+    if(!nowPlaying) return;
+    const i=SONGS.findIndex(s=>s.id===nowPlaying.id);
+    playSong(SONGS[(i-1+SONGS.length)%SONGS.length]);
   };
 
   const seekTo=(e)=>{
@@ -889,7 +937,7 @@ export default function HiFiView(){
     setScreen('tuning');
   };
 
-  const audioProps={nowPlaying,isPlaying,progress,onToggle:togglePlay,onSeek:seekTo};
+  const audioProps={nowPlaying,isPlaying,progress,onToggle:togglePlay,onSeek:seekTo,onNext:playNext,onPrev:playPrev};
 
   return (
     <div style={{width:'100%',height:'100%',background:'#000',
