@@ -3,6 +3,14 @@ import { GENRES, ARTISTS, SONGS } from './src/songData.js';
 
 const BG='#0E0A1F',CREAM='#F5EFE0',LIME='#D4FF6B',CORAL='#FF6B57',VIOLET='#B7A8FF';
 
+const RICK = {
+  id:'s_rick', trackId:1559885421,
+  title:'Never Gonna Give You Up', artist:'Rick Astley', artistId:'a_rick',
+  album:'Whenever You Need Somebody', genreId:'g2', hue:0, sat:60, years:2.1, influence:0.88,
+  artworkUrl:'https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ce/6d/5b/ce6d5b48-8c36-b990-3b9c-81862fadb459/0859381157694.jpg/400x400bb.jpg',
+  previewUrl:'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3a/d6/9a/3ad69a5b-1fdc-c0ca-069b-541cef78e9d6/mzaf_12029354858253493617.plus.aac.p.m4a',
+};
+
 // ── Helpers ──────────────────────────────────────────────────
 
 function rankSongs(songs,genreInf,artistInf,songInf){
@@ -305,7 +313,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onLibrary,onAlgo,pla
         <Ic d={P.more} sz={20} st='rgba(245,239,224,.55)'/>
         <div style={{flex:1}}/>
         <Ic d={P.shuf} sz={22} st='rgba(245,239,224,.45)'/>
-        <div onClick={()=>playSong(songs[0])} style={{width:52,height:52,borderRadius:26,background:'#1DB954',flexShrink:0,
+        <div onClick={()=>playSong(songs[0],songs)} style={{width:52,height:52,borderRadius:26,background:'#1DB954',flexShrink:0,
           display:'flex',alignItems:'center',justifyContent:'center',
           boxShadow:'0 4px 20px rgba(29,185,84,.35)',cursor:'pointer'}}>
           <Ic d={P.play} sz={22} fill='#000' st='#000'/>
@@ -314,7 +322,7 @@ function HiFiPlaylistScreen({label,isAlgo,seed,liked,onBack,onLibrary,onAlgo,pla
 
       {/* song list */}
       {songs.map(s=>(
-        <div key={s.id} onClick={()=>playSong(s)} style={{display:'flex',alignItems:'center',gap:12,padding:'8px 20px',cursor:'pointer'}}>
+        <div key={s.id} onClick={()=>playSong(s,songs)} style={{display:'flex',alignItems:'center',gap:12,padding:'8px 20px',cursor:'pointer'}}>
           <Img id={s.id} src={s.artworkUrl} size={50} r={4}/>
           <div style={{flex:1,minWidth:0}}>
             <div style={{fontSize:14,fontWeight:600,color:CREAM,overflow:'hidden',
@@ -401,8 +409,10 @@ function HiFiLibraryScreen({onBack,onAlgo,audioProps}){
 
 // ── Screen 3: Algorithm Dashboard ───────────────────────────
 
-function InfluenceRow({label,sublabel,artEl,influence,tierLabel,onMore,onLess}){
+function InfluenceRow({label,sublabel,artEl,influence,tierLabel,onMore,onLess,loading}){
   const pct=Math.round(influence*100);
+  const btnBase={padding:'5px 9px',borderRadius:999,border:'none',whiteSpace:'nowrap',fontSize:10,fontWeight:700,
+    fontFamily:"'Manrope','Inter',system-ui,sans-serif"};
   return (
     <div style={{display:'flex',alignItems:'center',gap:12,padding:'9px 20px'}}>
       {artEl}
@@ -415,21 +425,61 @@ function InfluenceRow({label,sublabel,artEl,influence,tierLabel,onMore,onLess}){
         </div>
       </div>
       <div style={{display:'flex',flexDirection:'column',gap:5,flexShrink:0}}>
-        <button onClick={onMore} style={{padding:'5px 9px',borderRadius:999,border:'none',cursor:'pointer',
-          background:'rgba(212,255,107,.18)',color:LIME,fontSize:10,fontWeight:700,whiteSpace:'nowrap',
-          fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>More of this</button>
-        <button onClick={onLess} style={{padding:'5px 9px',borderRadius:999,border:'none',cursor:'pointer',
-          background:'rgba(255,107,87,.18)',color:CORAL,fontSize:10,fontWeight:700,whiteSpace:'nowrap',
-          fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Less of this</button>
+        {loading
+          ?<button disabled style={{...btnBase,cursor:'default',background:'rgba(183,168,255,.15)',color:VIOLET}}>Tuning…</button>
+          :<><button onClick={onMore} style={{...btnBase,cursor:'pointer',background:'rgba(212,255,107,.18)',color:LIME}}>More of this</button>
+            <button onClick={onLess} style={{...btnBase,cursor:'pointer',background:'rgba(255,107,87,.18)',color:CORAL}}>Less of this</button></>
+        }
       </div>
     </div>
   );
 }
 
+const MIN_INF=0.01;
 function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,songInfluence,adjustGenre,adjustArtist,adjustSong}){
   const sortedGenres  = [...GENRES].sort((a,b)=>genreInfluence[b.id]-genreInfluence[a.id]);
   const sortedArtists = [...ARTISTS].sort((a,b)=>artistInfluence[b.id]-artistInfluence[a.id]);
-  const sortedSongs   = [...SONGS].sort((a,b)=>songInfluence[b.id]-songInfluence[a.id]);
+  const _songsSorted  = [...SONGS].sort((a,b)=>songInfluence[b.id]-songInfluence[a.id]);
+  const sortedSongs   = [_songsSorted[0], RICK, ..._songsSorted.slice(1)];
+
+  const [zeroConfirm,setZeroConfirm]=useState(null); // {kind:'genre'|'artist'|'song',id,cur}
+  const [tuning,setTuning]=useState({});
+
+  const markTuning=(kind,id)=>{
+    const key=`${kind}-${id}`;
+    setTuning(t=>({...t,[key]:true}));
+    setTimeout(()=>setTuning(t=>{const r={...t};delete r[key];return r;}),1500);
+  };
+  const tryLess=(kind,id,cur)=>{
+    if(cur<=0) return;
+    if(cur-0.12<=0){ setZeroConfirm({kind,id,cur}); return; }
+    if(kind==='genre') adjustGenre(id,-0.12);
+    else if(kind==='artist') adjustArtist(id,-0.12);
+    else adjustSong(id,-0.12);
+    markTuning(kind,id);
+  };
+  const tryMore=(kind,id)=>{
+    if(kind==='genre') adjustGenre(id,+0.12);
+    else if(kind==='artist') adjustArtist(id,+0.12);
+    else adjustSong(id,+0.12);
+    markTuning(kind,id);
+  };
+  const confirmRemove=()=>{
+    const {kind,id}=zeroConfirm;
+    if(kind==='genre') adjustGenre(id,-1);
+    else if(kind==='artist') adjustArtist(id,-1);
+    else adjustSong(id,-1);
+    markTuning(kind,id);
+    setZeroConfirm(null);
+  };
+  const confirmKeep=()=>{
+    const {kind,id,cur}=zeroConfirm;
+    if(kind==='genre') adjustGenre(id,MIN_INF-cur);
+    else if(kind==='artist') adjustArtist(id,MIN_INF-cur);
+    else adjustSong(id,MIN_INF-cur);
+    markTuning(kind,id);
+    setZeroConfirm(null);
+  };
 
   return <Shell>
     <div style={{position:'absolute',top:0,left:0,right:0,height:210,
@@ -460,12 +510,17 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
               <div style={{fontSize:12,fontWeight:700,color:CREAM,lineHeight:1.15}}>{g.name}</div>
               <div style={{fontSize:10,color:VIOLET,fontWeight:600,marginTop:3}}>{influenceTier(inf)}</div>
               <div style={{display:'flex',gap:5,marginTop:9}}>
-                <button onClick={()=>adjustGenre(g.id,-0.12)} style={{flex:1,padding:'5px 0',borderRadius:999,
-                  border:'none',cursor:'pointer',background:'rgba(255,107,87,.2)',color:CORAL,
-                  fontSize:10,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Less</button>
-                <button onClick={()=>adjustGenre(g.id,+0.12)} style={{flex:1,padding:'5px 0',borderRadius:999,
-                  border:'none',cursor:'pointer',background:'rgba(212,255,107,.2)',color:LIME,
-                  fontSize:10,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>More</button>
+                {tuning[`genre-${g.id}`]
+                  ?<button disabled style={{flex:1,padding:'5px 0',borderRadius:999,border:'none',cursor:'default',
+                      background:'rgba(183,168,255,.15)',color:VIOLET,fontSize:10,fontWeight:700,
+                      fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Tuning…</button>
+                  :<><button onClick={()=>tryLess('genre',g.id,inf)} style={{flex:1,padding:'5px 0',borderRadius:999,
+                      border:'none',cursor:'pointer',background:'rgba(255,107,87,.2)',color:CORAL,
+                      fontSize:10,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Less</button>
+                    <button onClick={()=>tryMore('genre',g.id)} style={{flex:1,padding:'5px 0',borderRadius:999,
+                      border:'none',cursor:'pointer',background:'rgba(212,255,107,.2)',color:LIME,
+                      fontSize:10,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>More</button></>
+                }
               </div>
             </div>
           );
@@ -481,16 +536,21 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
           const inf=artistInfluence[a.id];
           return (
             <div key={a.id} style={{flexShrink:0,width:90,display:'flex',flexDirection:'column',alignItems:'center'}}>
-              <Img id={a.id} size={80} r={40}/>
+              <Img id={a.id} src={a.imageUrl} size={80} r={40}/>
               <div style={{fontSize:11,fontWeight:700,color:CREAM,marginTop:6,textAlign:'center',lineHeight:1.2,width:'100%',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{a.name}</div>
               <div style={{fontSize:10,color:VIOLET,fontWeight:600,marginTop:2,textAlign:'center'}}>{influenceTier(inf)}</div>
               <div style={{display:'flex',gap:4,marginTop:7,width:'100%'}}>
-                <button onClick={()=>adjustArtist(a.id,-0.12)} style={{flex:1,padding:'5px 0',borderRadius:999,
-                  border:'none',cursor:'pointer',background:'rgba(255,107,87,.2)',color:CORAL,
-                  fontSize:9,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Less</button>
-                <button onClick={()=>adjustArtist(a.id,+0.12)} style={{flex:1,padding:'5px 0',borderRadius:999,
-                  border:'none',cursor:'pointer',background:'rgba(212,255,107,.2)',color:LIME,
-                  fontSize:9,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>More</button>
+                {tuning[`artist-${a.id}`]
+                  ?<button disabled style={{flex:1,padding:'5px 0',borderRadius:999,border:'none',cursor:'default',
+                      background:'rgba(183,168,255,.15)',color:VIOLET,fontSize:9,fontWeight:700,
+                      fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Tuning…</button>
+                  :<><button onClick={()=>tryLess('artist',a.id,inf)} style={{flex:1,padding:'5px 0',borderRadius:999,
+                      border:'none',cursor:'pointer',background:'rgba(255,107,87,.2)',color:CORAL,
+                      fontSize:9,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>Less</button>
+                    <button onClick={()=>tryMore('artist',a.id)} style={{flex:1,padding:'5px 0',borderRadius:999,
+                      border:'none',cursor:'pointer',background:'rgba(212,255,107,.2)',color:LIME,
+                      fontSize:9,fontWeight:700,fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>More</button></>
+                }
               </div>
             </div>
           );
@@ -504,11 +564,12 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
       {sortedSongs.map(s=>(
         <InfluenceRow key={s.id}
           label={s.title} sublabel={s.artist}
-          influence={songInfluence[s.id]}
-          tierLabel={influenceTier(songInfluence[s.id])}
+          influence={s.id==='s_rick'?RICK.influence:songInfluence[s.id]}
+          tierLabel={s.id==='s_rick'?'🔒 Always Here':influenceTier(songInfluence[s.id])}
           artEl={<Img id={s.id} src={s.artworkUrl} size={40} r={6}/>}
-          onMore={()=>adjustSong(s.id,+0.12)}
-          onLess={()=>adjustSong(s.id,-0.12)}/>
+          onMore={s.id==='s_rick'?()=>{}:()=>tryMore('song',s.id)}
+          onLess={s.id==='s_rick'?()=>{}:()=>tryLess('song',s.id,songInfluence[s.id])}
+          loading={s.id!=='s_rick'&&!!tuning[`song-${s.id}`]}/>
       ))}
     </div>
     <div style={{position:'absolute',bottom:24,left:24,right:24,zIndex:20}}>
@@ -519,6 +580,22 @@ function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,
         Guided Tuning
       </button>
     </div>
+    {zeroConfirm&&<div style={{position:'absolute',inset:0,background:'rgba(14,10,31,.85)',
+      display:'flex',alignItems:'center',justifyContent:'center',zIndex:30,padding:'0 28px'}}>
+      <div style={{background:'#1a1535',borderRadius:20,padding:'28px 24px',
+        textAlign:'center',border:'1px solid rgba(183,168,255,.25)'}}>
+        <div style={{color:CREAM,fontWeight:700,fontSize:16,lineHeight:1.45,marginBottom:24}}>
+          Reducing influence will completely remove this from your recommendations, is that okay?
+        </div>
+        <div style={{display:'flex',gap:12}}>
+          <div onClick={confirmKeep} style={{flex:1,padding:'12px 0',borderRadius:999,textAlign:'center',
+            background:'rgba(245,239,224,.12)',color:CREAM,fontWeight:700,fontSize:14,cursor:'pointer'}}>Keep</div>
+          <div onClick={confirmRemove} style={{flex:1,padding:'12px 0',borderRadius:999,textAlign:'center',
+            background:'rgba(255,107,87,.18)',border:'1px solid rgba(255,107,87,.4)',
+            color:CORAL,fontWeight:700,fontSize:14,cursor:'pointer'}}>Remove</div>
+        </div>
+      </div>
+    </div>}
   </Shell>;
 }
 
@@ -614,7 +691,11 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
 }
 
 function HiFiGuidedTuning({onBack,onFinish,songInfluence,artistInfluence,genreInfluence,adjustSong,adjustArtist,adjustGenre,playSong,audioProps}){
-  const [shuffled]=useState(()=>[...SONGS].sort(()=>Math.random()-.5));
+  const [shuffled]=useState(()=>{
+    const s=[...SONGS].sort(()=>Math.random()-.5);
+    s.splice(1,0,RICK);
+    return s;
+  });
   const N=shuffled.length;
   const [idx,setIdx]=useState(0);
   const [swipeCount,setSwipeCount]=useState(0);
@@ -839,7 +920,7 @@ export default function HiFiView(){
     ()=>Object.fromEntries(ARTISTS.map(a=>[a.id,a.influence]))
   );
   const [songInfluence,setSongInfluence]=useState(
-    ()=>Object.fromEntries(SONGS.map(s=>[s.id,s.influence]))
+    ()=>({...Object.fromEntries(SONGS.map(s=>[s.id,s.influence])), [RICK.id]:RICK.influence})
   );
 
   const clamp=v=>Math.min(1,Math.max(0,v));
@@ -853,6 +934,7 @@ export default function HiFiView(){
 
   const audioRef      = useRef(null);
   const nowPlayingRef = useRef(null);
+  const queueRef      = useRef([SONGS[0], RICK, ...SONGS.slice(1)]);
   const [nowPlaying,setNowPlaying] = useState(null);
   const [isPlaying, setIsPlaying]  = useState(false);
   const [progress,  setProgress]   = useState(0);
@@ -864,8 +946,9 @@ export default function HiFiView(){
     const onEnded =()=>{
       const cur=nowPlayingRef.current;
       if(cur){
-        const i=SONGS.findIndex(s=>s.id===cur.id);
-        const nextSong=SONGS[(i+1)%SONGS.length];
+        const queue=queueRef.current;
+        const i=queue.findIndex(s=>s.id===cur.id);
+        const nextSong=queue[(i+1)%queue.length];
         nowPlayingRef.current=nextSong;
         setNowPlaying(nextSong);
         setProgress(0);
@@ -887,8 +970,9 @@ export default function HiFiView(){
     };
   },[]);
 
-  const playSong=(song)=>{
+  const playSong=(song,queue=null)=>{
     if(!audioRef.current) return;
+    if(queue) queueRef.current=queue;
     nowPlayingRef.current=song;
     const url=song.previewUrl||null;
     setNowPlaying(song);
@@ -906,13 +990,15 @@ export default function HiFiView(){
   };
   const playNext=()=>{
     if(!nowPlaying) return;
-    const i=SONGS.findIndex(s=>s.id===nowPlaying.id);
-    playSong(SONGS[(i+1)%SONGS.length]);
+    const queue=queueRef.current;
+    const i=queue.findIndex(s=>s.id===nowPlaying.id);
+    playSong(queue[(i+1)%queue.length]);
   };
   const playPrev=()=>{
     if(!nowPlaying) return;
-    const i=SONGS.findIndex(s=>s.id===nowPlaying.id);
-    playSong(SONGS[(i-1+SONGS.length)%SONGS.length]);
+    const queue=queueRef.current;
+    const i=queue.findIndex(s=>s.id===nowPlaying.id);
+    playSong(queue[(i-1+queue.length)%queue.length]);
   };
 
   const seekTo=(e)=>{

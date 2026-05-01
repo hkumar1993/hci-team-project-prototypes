@@ -129,2065 +129,2360 @@ export const ARTISTS = [
     "name": "Post Malone",
     "plays": 265,
     "hue": 14,
-    "influence": 0.46
+    "influence": 0.46,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/1b/1b/7b1b1b0b-7ce2-b223-f9e0-8e36abe51877/19UMGIM78325.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a2",
     "name": "Harry Styles",
     "plays": 230,
     "hue": 51,
-    "influence": 0.03
+    "influence": 0.03,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg/400x400bb.jpg"
   },
   {
     "id": "a3",
     "name": "The Weeknd",
     "plays": 222,
     "hue": 88,
-    "influence": 0.99
+    "influence": 0.99,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e2/61/f8/e261f8c1-73db-9a7a-c89e-1068f19970e0/16UMGIM67863.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a4",
     "name": "Bruno Mars",
     "plays": 34,
     "hue": 125,
-    "influence": 0.54
+    "influence": 0.54,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e3/47/a0/e347a0cc-87ce-5d05-d560-176c7d48f66e/075679904119.jpg/400x400bb.jpg"
   },
   {
     "id": "a5",
     "name": "Billie Eilish",
     "plays": 7,
     "hue": 162,
-    "influence": 0.98
+    "influence": 0.98,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a6",
     "name": "Luke Combs",
     "plays": 477,
     "hue": 199,
-    "influence": 0.27
+    "influence": 0.27,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/7d/24/14/7d241439-671a-d957-9613-2f738f43a064/196589485991.jpg/400x400bb.jpg"
   },
   {
     "id": "a7",
     "name": "Khalid",
     "plays": 24,
     "hue": 236,
-    "influence": 0.17
+    "influence": 0.17,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f8/45/5a/f8455a71-8307-aa9a-9c95-3d22efe0804f/886446326146.jpg/400x400bb.jpg"
   },
   {
     "id": "a8",
     "name": "USHER",
     "plays": 228,
     "hue": 273,
-    "influence": 0.33
+    "influence": 0.33,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/02/c6/e1/02c6e1cd-8d57-97b4-6ef1-77d2be004509/mzi.sjrqsmrq.jpg/400x400bb.jpg"
   },
   {
     "id": "a9",
     "name": "James Arthur",
     "plays": 480,
     "hue": 310,
-    "influence": 0.43
+    "influence": 0.43,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/9c/c2/89/9cc289cb-66fe-a754-8ec7-859d76d65c55/886445946789.jpg/400x400bb.jpg"
   },
   {
     "id": "a10",
     "name": "Taylor Swift",
     "plays": 331,
     "hue": 347,
-    "influence": 0.78
+    "influence": 0.78,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/49/3d/ab/493dab54-f920-9043-6181-80993b8116c9/19UMGIM53909.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a11",
     "name": "NAYEON",
     "plays": 233,
     "hue": 24,
-    "influence": 0.82
+    "influence": 0.82,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/3f/49/ec/3f49ecb2-cb91-dd28-45b9-a31326d7e63b/738676859614_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a12",
     "name": "Marshmello & Bastille",
     "plays": 158,
     "hue": 61,
-    "influence": 0.76
+    "influence": 0.76,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e5/61/69/e561696f-40c5-19c1-ec6d-5b2dfaa919f2/21.jpg/400x400bb.jpg"
   },
   {
     "id": "a13",
     "name": "Adele",
     "plays": 182,
     "hue": 98,
-    "influence": 0.6
+    "influence": 0.6,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/73/6d/7c/736d7cfb-c79d-c9a9-4170-5e71d008dea1/886449666430.jpg/400x400bb.jpg"
   },
   {
     "id": "a14",
     "name": "Lukas Graham",
     "plays": 362,
     "hue": 135,
-    "influence": 0.76
+    "influence": 0.76,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/1f/57/08/1f57082e-ee7e-dcb7-a73e-ba1f3468211d/093624920496.jpg/400x400bb.jpg"
   },
   {
     "id": "a15",
     "name": "Ozuna",
     "plays": 43,
     "hue": 172,
-    "influence": 0.41
+    "influence": 0.41,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/df/7c/1b/df7c1b32-0fca-94f0-866b-ba89e420ca04/697691884103.jpg/400x400bb.jpg"
   },
   {
     "id": "a16",
     "name": "Stepz",
     "plays": 389,
     "hue": 209,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ad/d0/ed/add0ed5b-bf41-312c-4c32-614f9c76e71b/723277880365.jpg/400x400bb.jpg"
   },
   {
     "id": "a17",
     "name": "Bobby Helms",
     "plays": 388,
     "hue": 246,
-    "influence": 0.6
+    "influence": 0.6,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e8/18/6b/e8186bf9-5696-e721-b273-a5f173caf8c1/18UMGIM07062.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a18",
     "name": "Chris Stapleton",
     "plays": 144,
     "hue": 283,
-    "influence": 0.06
+    "influence": 0.06,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8b/f6/00/8bf60032-a7ef-4fbe-89c5-07be8edd0848/00602557542783.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a19",
     "name": "Noah Kahan",
     "plays": 252,
     "hue": 320,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8d/25/8e/8d258e09-7395-998f-23ed-82b0433b0518/22UMGIM71396.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a20",
     "name": "Fall Out Boy",
     "plays": 223,
     "hue": 357,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ea/5f/87/ea5f87ea-4bc3-0e01-456c-37401a4268f2/14UMGIM60337.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a21",
     "name": "d4vd",
     "plays": 481,
     "hue": 34,
-    "influence": 0.67
+    "influence": 0.67,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/4e/0c/82/4e0c82e8-7970-25f5-bfd6-6f0faec83dcb/22UMGIM94151.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a22",
     "name": "Brenda Lee",
     "plays": 215,
     "hue": 71,
-    "influence": 0.82
+    "influence": 0.82,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d4/ea/6b/d4ea6b89-f9ac-f476-270d-66931315bc4c/06UMGIM02727.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a23",
     "name": "Nirvana",
     "plays": 254,
     "hue": 108,
-    "influence": 0.9
+    "influence": 0.9,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/fd/b9/95fdb9b2-6d2b-92a6-97f2-51c1a6d77f1a/00602527874609.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a24",
     "name": "Sublime",
     "plays": 10,
     "hue": 145,
-    "influence": 0.8
+    "influence": 0.8,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c2/44/52/c2445270-0ad1-c895-3ab1-24beedd6c422/06UMGIM01498.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a25",
     "name": "Red Hot Chili Peppers",
     "plays": 471,
     "hue": 182,
-    "influence": 0.49
+    "influence": 0.49,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/04/8e/ff/048effa0-da05-a993-f2e0-172cd0613377/093624931942.jpg/400x400bb.jpg"
   },
   {
     "id": "a26",
     "name": "The Rolling Stones",
     "plays": 13,
     "hue": 219,
-    "influence": 0.16
+    "influence": 0.16,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/29/b7/81/29b781e5-3773-c87e-c6a8-82581e53d270/13ABKIM00053.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a27",
     "name": "Mr.Kitty",
     "plays": 199,
     "hue": 256,
-    "influence": 0.89
+    "influence": 0.89,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ce/5d/c6/ce5dc65e-6dac-bb8a-daaf-72bf77d0ba75/616450974909.png/400x400bb.jpg"
   },
   {
     "id": "a28",
     "name": "SEVENTEEN",
     "plays": 124,
     "hue": 293,
-    "influence": 0.28
+    "influence": 0.28,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/15/c3/c5/15c3c59b-22ce-699e-dcb1-23f006cf8410/cover-.jpg/400x400bb.jpg"
   },
   {
     "id": "a29",
     "name": "Maroon 5",
     "plays": 112,
     "hue": 330,
-    "influence": 0.06
+    "influence": 0.06,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d0/3e/25/d03e255d-e205-0e66-20f6-01e251896c25/14UMGIM27076.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a30",
     "name": "Whiskey Myers",
     "plays": 419,
     "hue": 7,
-    "influence": 0.41
+    "influence": 0.41,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d0/cf/22/d0cf226c-607d-d97c-61d4-26eabde51f1d/886443002371_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a31",
     "name": "Mac DeMarco",
     "plays": 337,
     "hue": 44,
-    "influence": 0.59
+    "influence": 0.59,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/af/b4/e5/afb4e586-65ef-86cd-1814-83c129952237/00842812112638.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a32",
     "name": "Eagles",
     "plays": 347,
     "hue": 81,
-    "influence": 0.67
+    "influence": 0.67,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/88/16/2c/88162c3d-46db-8321-61f3-3a47404cfe76/075596050920.jpg/400x400bb.jpg"
   },
   {
     "id": "a33",
     "name": "Parker McCollum",
     "plays": 86,
     "hue": 118,
-    "influence": 0.55
+    "influence": 0.55,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0e/60/5d/0e605dc7-e67d-432d-d2dc-46d3d64f35a3/23UMGIM07998.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a34",
     "name": "Grafh & Joyner Lucas",
     "plays": 194,
     "hue": 155,
-    "influence": 0.98
+    "influence": 0.98,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ab/e7/bf/abe7bf81-1f40-7bf5-c72d-cbb8a885c86b/1036703.jpg/400x400bb.jpg"
   },
   {
     "id": "a35",
     "name": "Gucci Mane",
     "plays": 451,
     "hue": 192,
-    "influence": 0.03
+    "influence": 0.03,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9c/3a/85/9c3a8583-2fe7-2cae-2ee6-e0d3bd30dae2/823375138112_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a36",
     "name": "Lloyd featuring Lil Wayne",
     "plays": 485,
     "hue": 229,
-    "influence": 0.38
+    "influence": 0.38,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/83/17/b2/8317b29e-6d8a-22a7-718e-b7e014f3b6c1/07UMGIM01885.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a37",
     "name": "Travis Scott",
     "plays": 27,
     "hue": 266,
-    "influence": 0.57
+    "influence": 0.57,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/30/66/90/306690d4-2a29-402e-e406-6b319ce7731a/886447227169.jpg/400x400bb.jpg"
   },
   {
     "id": "a38",
     "name": "Kanye West",
     "plays": 96,
     "hue": 303,
-    "influence": 0.79
+    "influence": 0.79,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4d/75/2d/4d752db1-022d-f65d-40a1-a2390f01427a/13UAEIM26465.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a39",
     "name": "Kendrick Lamar",
     "plays": 20,
     "hue": 340,
-    "influence": 0.66
+    "influence": 0.66,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/86/c9/bb/86c9bb30-fe3d-442e-33c1-c106c4d23705/17UMGIM88776.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a40",
     "name": "Drake",
     "plays": 159,
     "hue": 17,
-    "influence": 0.23
+    "influence": 0.23,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/f5/87/95f587f7-21c3-d5f9-d81a-4350f9caa020/16UMGIM27643.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a41",
     "name": "Post Malone & Swae Lee",
     "plays": 153,
     "hue": 54,
-    "influence": 0.83
+    "influence": 0.83,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4b/30/2c/4b302cb6-7a14-5464-4e97-0577e9d0be49/18UMGIM82277.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a42",
     "name": "TLC",
     "plays": 199,
     "hue": 91,
-    "influence": 0.5
+    "influence": 0.5,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2d/19/0c/2d190ce6-a157-6364-b5b4-e9b00265d313/mzi.ucefobwj.jpg/400x400bb.jpg"
   },
   {
     "id": "a43",
     "name": "NF",
     "plays": 62,
     "hue": 128,
-    "influence": 0.4
+    "influence": 0.4,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/6e/96/04/6e9604a8-3270-f86e-0c47-0127141545c3/17UM1IM17084.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a44",
     "name": "Lil Durk",
     "plays": 386,
     "hue": 165,
-    "influence": 0.84
+    "influence": 0.84,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6f/73/de/6f73de5d-9bd5-05f1-ebbc-0e053afea88d/886449812868.jpg/400x400bb.jpg"
   },
   {
     "id": "a45",
     "name": "Lil Nas X",
     "plays": 23,
     "hue": 202,
-    "influence": 0.84
+    "influence": 0.84,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/07/d4/c3/07d4c33e-b793-d78f-bb1b-52f1e224da88/886447788264.jpg/400x400bb.jpg"
   },
   {
     "id": "a46",
     "name": "Owen",
     "plays": 413,
     "hue": 239,
-    "influence": 0.19
+    "influence": 0.19,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d0/66/3b/d0663b33-d00c-2ed4-6c5d-57f2c696209f/8809492000725.jpg/400x400bb.jpg"
   },
   {
     "id": "a47",
     "name": "Toosii",
     "plays": 295,
     "hue": 276,
-    "influence": 0.88
+    "influence": 0.88,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a0/ca/05/a0ca057c-686e-8f24-e4da-43b39e5033f4/23UMGIM13549.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a48",
     "name": "Beyoncé",
     "plays": 52,
     "hue": 313,
-    "influence": 0.83
+    "influence": 0.83,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg/400x400bb.jpg"
   },
   {
     "id": "a49",
     "name": "Charli xcx & Billie Eilish",
     "plays": 96,
     "hue": 350,
-    "influence": 0.85
+    "influence": 0.85,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2c/a7/a2/2ca7a20f-13aa-81ac-9423-a09147acab76/075679636072.jpg/400x400bb.jpg"
   },
   {
     "id": "a50",
     "name": "M.I.A.",
     "plays": 11,
     "hue": 27,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c6/46/43/c64643ec-ef0b-d44d-dc50-b1a6cdf567a6/634904132866.png/400x400bb.jpg"
   },
   {
     "id": "a51",
     "name": "ODESZA",
     "plays": 457,
     "hue": 64,
-    "influence": 0.89
+    "influence": 0.89,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/76/5d/55/765d554e-e421-0299-783f-d78ad559d5e5/5021392959191.png/400x400bb.jpg"
   },
   {
     "id": "a52",
     "name": "Moby",
     "plays": 211,
     "hue": 101,
-    "influence": 0.89
+    "influence": 0.89,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b0/b4/93/b0b493b1-71ae-b154-ab40-e6acc7d84c46/842108036099_1.jpg/400x400bb.jpg"
   },
   {
     "id": "a53",
     "name": "Flight Facilities",
     "plays": 54,
     "hue": 138,
-    "influence": 0.81
+    "influence": 0.81,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e8/48/25/e84825c3-ac6e-a75c-cec5-81d141d505dc/0044003177529_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a54",
     "name": "Petit Biscuit",
     "plays": 10,
     "hue": 175,
-    "influence": 0.37
+    "influence": 0.37,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/1c/93/781c934a-c233-cfce-39db-31f7284969b4/cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a55",
     "name": "Labrinth",
     "plays": 475,
     "hue": 212,
-    "influence": 0.82
+    "influence": 0.82,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6f/f4/05/6ff40578-72c8-e9ed-5413-96dc4874cc86/886447932223.jpg/400x400bb.jpg"
   },
   {
     "id": "a56",
     "name": "Keyshia Cole",
     "plays": 165,
     "hue": 249,
-    "influence": 0.81
+    "influence": 0.81,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/1f/7a/4e1f7a41-58d4-d08c-0855-6715641a3d06/07UMGIM12395.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a57",
     "name": "Kenya Grace",
     "plays": 483,
     "hue": 286,
-    "influence": 0.04
+    "influence": 0.04,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/82/da/f7/82daf7a1-4d0e-9a94-9314-0916e4ab5635/054391385239.jpg/400x400bb.jpg"
   },
   {
     "id": "a58",
     "name": "Trinix, Rushawn & Jermaine Edwards",
     "plays": 496,
     "hue": 323,
-    "influence": 0.05
+    "influence": 0.05,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/57/9a/57/579a5702-d517-4608-3fd0-709fd0f8db8c/196589837660.jpg/400x400bb.jpg"
   },
   {
     "id": "a59",
     "name": "Crystal Castles",
     "plays": 460,
     "hue": 0,
-    "influence": 0.5
+    "influence": 0.5,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/af/c2/0c/afc20cde-17b5-2002-7a40-f28536312089/5400863128418_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a60",
     "name": "Baauer",
     "plays": 255,
     "hue": 37,
-    "influence": 0.84
+    "influence": 0.84,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/fc/36/e1fc3610-7985-814a-8faa-80ec14412c94/340.jpg/400x400bb.jpg"
   },
   {
     "id": "a61",
     "name": "Daft Punk",
     "plays": 433,
     "hue": 74,
-    "influence": 0.71
+    "influence": 0.71,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/400x400bb.jpg"
   },
   {
     "id": "a62",
     "name": "Nao",
     "plays": 55,
     "hue": 111,
-    "influence": 0.44
+    "influence": 0.44,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/ce/17/79ce17b6-0237-a4d0-e74a-ab5c44c692b1/886445711028.jpg/400x400bb.jpg"
   },
   {
     "id": "a63",
     "name": "Lewis OfMan",
     "plays": 270,
     "hue": 148,
-    "influence": 0.09
+    "influence": 0.09,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0b/74/0f/0b740f81-11fe-1f8b-f40c-d0475252a08b/20UM1IM15180.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a64",
     "name": "Justice",
     "plays": 90,
     "hue": 185,
-    "influence": 0.95
+    "influence": 0.95,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/62/e4/01/62e40187-e672-17e5-f31f-9aee262703a3/mzi.bifzeufu.jpg/400x400bb.jpg"
   },
   {
     "id": "a65",
     "name": "English Teacher",
     "plays": 466,
     "hue": 222,
-    "influence": 0.25
+    "influence": 0.25,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/40/d5/72/40d57277-b6cc-2750-2c30-675aaa767d2e/23UM1IM56861.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a66",
     "name": "Jaylon Ashaun",
     "plays": 477,
     "hue": 259,
-    "influence": 0.32
+    "influence": 0.32,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e6/f5/2c/e6f52cfc-a280-5501-cff2-084f06b1b2c9/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a67",
     "name": "Daniel Caesar",
     "plays": 343,
     "hue": 296,
-    "influence": 0.36
+    "influence": 0.36,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b6/cd/1a/b6cd1a5b-83af-a1e2-0ad7-ea530fcf2522/859722261219.jpg/400x400bb.jpg"
   },
   {
     "id": "a68",
     "name": "Mario",
     "plays": 492,
     "hue": 333,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6b/77/72/6b777276-1f3d-8ecf-d9d2-06733e3d7dd3/828766188523.jpg/400x400bb.jpg"
   },
   {
     "id": "a69",
     "name": "Miguel",
     "plays": 208,
     "hue": 10,
-    "influence": 0.43
+    "influence": 0.43,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/bf/86/ba/mzi.rpgkclds.jpg/400x400bb.jpg"
   },
   {
     "id": "a70",
     "name": "R. Kelly",
     "plays": 260,
     "hue": 47,
-    "influence": 0.72
+    "influence": 0.72,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Features/f6/d3/15/dj.zfltxxux.jpg/400x400bb.jpg"
   },
   {
     "id": "a71",
     "name": "SZA",
     "plays": 273,
     "hue": 84,
-    "influence": 0.5
+    "influence": 0.5,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/400x400bb.jpg"
   },
   {
     "id": "a72",
     "name": "Summer Walker",
     "plays": 139,
     "hue": 121,
-    "influence": 0.29
+    "influence": 0.29,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7c/1e/1a/7c1e1a21-013c-f31d-dc2c-c8118439641d/18UMGIM66021.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a73",
     "name": "Danity Kane",
     "plays": 278,
     "hue": 158,
-    "influence": 0.22
+    "influence": 0.22,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c0/48/d8/c048d8a9-10f3-b31d-42b2-6e6d3b706abc/mzi.yumxxqcf.jpg/400x400bb.jpg"
   },
   {
     "id": "a74",
     "name": "Justin Bieber",
     "plays": 434,
     "hue": 195,
-    "influence": 0.59
+    "influence": 0.59,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b9/0a/b4/b90ab45a-07b1-0bcc-331c-c496a21d07e4/10UMGIM01134.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a75",
     "name": "Mariah the Scientist",
     "plays": 18,
     "hue": 232,
-    "influence": 0.59
+    "influence": 0.59,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/0b/b4/440bb4fb-9717-f27d-4486-9e31718fffa4/196873070889.jpg/400x400bb.jpg"
   },
   {
     "id": "a76",
     "name": "Jason Aldean",
     "plays": 181,
     "hue": 269,
-    "influence": 0.24
+    "influence": 0.24,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/11/6a/63/116a6361-2c19-fa07-5063-4b0307e5d06d/4050538376074.jpg/400x400bb.jpg"
   },
   {
     "id": "a77",
     "name": "Keith Urban",
     "plays": 139,
     "hue": 306,
-    "influence": 0.94
+    "influence": 0.94,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/08/94/8f/08948f61-ab2c-3e2b-3aef-e16132125f4a/16UMGIM18157.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a78",
     "name": "Morgan Wallen",
     "plays": 320,
     "hue": 343,
-    "influence": 0.15
+    "influence": 0.15,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/80/bb/18/80bb1895-326f-e618-9aa8-d2338bb35f0c/842812106569_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a79",
     "name": "Jon Pardi",
     "plays": 180,
     "hue": 20,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c1/6f/2f/c16f2fbe-b608-e931-1d2f-1171bdf2f7cc/16UMGIM11343.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a80",
     "name": "Zach Bryan",
     "plays": 304,
     "hue": 57,
-    "influence": 0.05
+    "influence": 0.05,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b4/e0/31/b4e03179-76e0-4c56-26e7-3637e84266b2/054391820549.jpg/400x400bb.jpg"
   },
   {
     "id": "a81",
     "name": "John Denver",
     "plays": 489,
     "hue": 94,
-    "influence": 0.49
+    "influence": 0.49,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/52/ed/f3/52edf3b6-5b73-c52d-e3f6-4473412eec7c/886443406193.jpg/400x400bb.jpg"
   },
   {
     "id": "a82",
     "name": "Kid Rock",
     "plays": 39,
     "hue": 131,
-    "influence": 0.56
+    "influence": 0.56,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4a/be/08/4abe0841-ac1a-89d1-e25f-7247f5d0094f/075679955548.jpg/400x400bb.jpg"
   },
   {
     "id": "a83",
     "name": "Racoma",
     "plays": 78,
     "hue": 168,
-    "influence": 0.55
+    "influence": 0.55,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8e/cc/c5/8eccc570-28aa-1975-f67e-eb1189f1efd1/859725610236_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a84",
     "name": "Empire Of The Sun",
     "plays": 274,
     "hue": 205,
-    "influence": 0.82
+    "influence": 0.82,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7f/63/2c/7f632c08-3960-de3d-d34c-ee8140038b69/13UADIM60773.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a85",
     "name": "Eric Church",
     "plays": 330,
     "hue": 242,
-    "influence": 0.56
+    "influence": 0.56,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/69/76/77/69767702-ea47-d219-a13c-0f51e19e6ccb/13UABIM59426.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a86",
     "name": "Luke Bryan",
     "plays": 45,
     "hue": 279,
-    "influence": 0.2
+    "influence": 0.2,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a4/6d/40/a46d40ac-305d-0e58-b23d-bf8799c54f8d/13UABIM53308.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a87",
     "name": "Darius Rucker",
     "plays": 167,
     "hue": 316,
-    "influence": 0.84
+    "influence": 0.84,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/85/67/71/856771e4-7058-c00f-a42b-3f10b8394a1c/19UMGIM53422.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a88",
     "name": "Marshmello & Kane Brown",
     "plays": 180,
     "hue": 353,
-    "influence": 0.16
+    "influence": 0.16,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/16/a9/33/16a933e3-b446-d7aa-3240-1da0f047eefc/886447798775.jpg/400x400bb.jpg"
   },
   {
     "id": "a89",
     "name": "A Tribe Called Quest",
     "plays": 304,
     "hue": 30,
-    "influence": 0.22
+    "influence": 0.22,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/2e/3a/ab2e3a42-1c8b-9f3f-3d36-da74de7be595/886449538959.jpg/400x400bb.jpg"
   },
   {
     "id": "a90",
     "name": "Olivia Dean",
     "plays": 156,
     "hue": 67,
-    "influence": 0.1
+    "influence": 0.1,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/26/8d/bb/268dbb59-4df1-36c3-525e-8d24c921ee25/23UMGIM04594.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a91",
     "name": "Cleo Sol",
     "plays": 377,
     "hue": 104,
-    "influence": 0.26
+    "influence": 0.26,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/42/43/43/424343f4-7ef4-7d12-be44-fb24cc0d0137/859748545218_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a92",
     "name": "Harry Belafonte",
     "plays": 403,
     "hue": 141,
-    "influence": 0.42
+    "influence": 0.42,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f8/a7/98/f8a798e6-e948-e2bd-c91d-632e0f4943b3/dj.npveptkx.jpg/400x400bb.jpg"
   },
   {
     "id": "a93",
     "name": "Alicia Nando",
     "plays": 70,
     "hue": 178,
-    "influence": 0.8
+    "influence": 0.8,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e3/ba/cd/e3bacd1f-7350-c0e4-576b-9a2dde1996ed/ibiza.jpg/400x400bb.jpg"
   },
   {
     "id": "a94",
     "name": "Sade",
     "plays": 90,
     "hue": 215,
-    "influence": 0.95
+    "influence": 0.95,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4d/d5/a1/4dd5a1b7-7134-f0ec-b55c-54ac47cc88a5/886448655886.jpg/400x400bb.jpg"
   },
   {
     "id": "a95",
     "name": "Frank Sinatra",
     "plays": 74,
     "hue": 252,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b2/dd/ff/b2ddffc3-a222-6046-e40b-ddc154c9020b/13UAAIM05202.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a96",
     "name": "Eva",
     "plays": 405,
     "hue": 289,
-    "influence": 0.18
+    "influence": 0.18,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/db/a8/bb/dba8bb8e-519c-a161-fbbd-51d84fd97b69/19UMGIM36862.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a97",
     "name": "Cyndi Lauper",
     "plays": 323,
     "hue": 326,
-    "influence": 0.69
+    "influence": 0.69,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/8c/13/8a8c13e0-06af-1710-7b7d-ebec65fb8361/074643893022.jpg/400x400bb.jpg"
   },
   {
     "id": "a98",
     "name": "Richard Wess & Betty Carter",
     "plays": 288,
     "hue": 3,
-    "influence": 0.85
+    "influence": 0.85,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/4b/71/a9/4b71a9ac-f2c8-b7ef-045a-b8e482c31f1f/00602465458220.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a99",
     "name": "Ray Charles",
     "plays": 140,
     "hue": 40,
-    "influence": 0.44
+    "influence": 0.44,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/e5/71/53e57150-c25c-c385-9d2b-5863d0255b29/3663729143280_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a100",
     "name": "Gotye",
     "plays": 400,
     "hue": 77,
-    "influence": 0.17
+    "influence": 0.17,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b3/8a/98/b38a9867-2a9c-de2f-2d80-c624fb2200ec/11UMGIM19347.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a101",
     "name": "M83",
     "plays": 81,
     "hue": 114,
-    "influence": 0.79
+    "influence": 0.79,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/7b/a9/cb7ba903-b5f1-cc21-90db-7a81b7aa0997/724596951057.jpg/400x400bb.jpg"
   },
   {
     "id": "a102",
     "name": "Santana",
     "plays": 375,
     "hue": 151,
-    "influence": 0.64
+    "influence": 0.64,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/30/03/7f/30037fd6-3292-1806-c806-5341391c9aac/886444593038.jpg/400x400bb.jpg"
   },
   {
     "id": "a103",
     "name": "Billy Crystal & John Goodman",
     "plays": 445,
     "hue": 188,
-    "influence": 0.95
+    "influence": 0.95,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1c/89/dc/1c89dc90-8df9-d91c-c814-256cf589642b/00050087349691.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a104",
     "name": "Doris Day",
     "plays": 330,
     "hue": 225,
-    "influence": 0.36
+    "influence": 0.36,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music18/v4/b7/f3/71/b7f371ad-5e3f-9a56-86e9-f4212d38bc48/886445825107.jpg/400x400bb.jpg"
   },
   {
     "id": "a105",
     "name": "Vitamin String Quartet",
     "plays": 226,
     "hue": 262,
-    "influence": 0.17
+    "influence": 0.17,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/ee/32/78ee3255-38c7-2b60-69dd-805eea718c10/780163583823.jpg/400x400bb.jpg"
   },
   {
     "id": "a106",
     "name": "John Williams, The American Boychoir & Boston Pops Orchestra",
     "plays": 301,
     "hue": 299,
-    "influence": 0.58
+    "influence": 0.58,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/01/3b/9c013b6d-a316-3119-a94a-c2ef2fbfbefa/886445465518.jpg/400x400bb.jpg"
   },
   {
     "id": "a107",
     "name": "Howard Shore",
     "plays": 487,
     "hue": 336,
-    "influence": 0.86
+    "influence": 0.86,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cd/d0/0b/cdd00b19-0cd7-3c23-3f47-79a5b4399491/603497859108.jpg/400x400bb.jpg"
   },
   {
     "id": "a108",
     "name": "Brian Crain",
     "plays": 329,
     "hue": 13,
-    "influence": 0.52
+    "influence": 0.52,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d1/12/fd/d112fd2e-00df-d7e3-b0ba-28fcc6b7b80f/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a109",
     "name": "Jon Hopkins",
     "plays": 496,
     "hue": 50,
-    "influence": 0.99
+    "influence": 0.99,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/c6/c7/dcc6c789-934f-b5e7-9245-941b82ea112c/3663729299925_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a110",
     "name": "Baby Lullaby Academy",
     "plays": 340,
     "hue": 87,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/cb/17/abcb1725-a2e0-c4bc-8666-136f5782635a/859714545211_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a111",
     "name": "Vampire Weekend",
     "plays": 337,
     "hue": 124,
-    "influence": 0.38
+    "influence": 0.38,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/9f/ed/f99fed7a-3b13-3531-3db6-fac34e1d1c7c/196871790307.jpg/400x400bb.jpg"
   },
   {
     "id": "a112",
     "name": "Trans-Siberian Orchestra",
     "plays": 27,
     "hue": 161,
-    "influence": 0.6
+    "influence": 0.6,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e0/7c/f4/e07cf4d8-8fbf-96df-ae7a-6a25c8583256/mzi.sxqwkjew.jpg/400x400bb.jpg"
   },
   {
     "id": "a113",
     "name": "Owl City",
     "plays": 133,
     "hue": 198,
-    "influence": 0.28
+    "influence": 0.28,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7d/a9/9b/7da99b70-0517-c972-4714-40b6b9119010/12DMGIM03572.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a114",
     "name": "The Piano Guys",
     "plays": 258,
     "hue": 235,
-    "influence": 0.6
+    "influence": 0.6,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/03/73/e0/0373e014-c310-691a-455c-ed0ef0d67833/886443743748.jpg/400x400bb.jpg"
   },
   {
     "id": "a115",
     "name": "Nathan Lane, Ernie Sabella, Jason Weaver & Joseph Williams",
     "plays": 242,
     "hue": 272,
-    "influence": 0.03
+    "influence": 0.03,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ce/80/89/ce808921-d594-fa7f-03e8-adcc92a69de8/06PNDIM00020.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a116",
     "name": "Jason Weaver, Rowan Atkinson & Laura Williams",
     "plays": 197,
     "hue": 309,
-    "influence": 0.66
+    "influence": 0.66,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ce/80/89/ce808921-d594-fa7f-03e8-adcc92a69de8/06PNDIM00020.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a117",
     "name": "Øneheart & reidenshi",
     "plays": 139,
     "hue": 346,
-    "influence": 0.29
+    "influence": 0.29,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/55/2b/90/552b9000-b194-451b-9b37-b472aeafa81e/1963620731190_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a118",
     "name": "Ariana Grande & John Legend",
     "plays": 321,
     "hue": 23,
-    "influence": 0.36
+    "influence": 0.36,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/de/e3/49/dee3493a-14c8-0ded-8e27-05561bf8cc93/00050087362898.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a119",
     "name": "Hans Zimmer",
     "plays": 404,
     "hue": 60,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/9f/7e/60/9f7e6017-3bd3-570f-7890-eba0f3aa6c33/mzi.hxbvposl.jpg/400x400bb.jpg"
   },
   {
     "id": "a120",
     "name": "Ludovico Einaudi",
     "plays": 16,
     "hue": 97,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/6c/ef/aa/6cefaa2a-eec1-d68a-fb77-6d8c08244652/23UM1IM19218.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a121",
     "name": "Elton John",
     "plays": 281,
     "hue": 134,
-    "influence": 0.65
+    "influence": 0.65,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ce/80/89/ce808921-d594-fa7f-03e8-adcc92a69de8/06PNDIM00020.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a122",
     "name": "John Williams",
     "plays": 231,
     "hue": 171,
-    "influence": 0.76
+    "influence": 0.76,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/01/3b/9c013b6d-a316-3119-a94a-c2ef2fbfbefa/886445465518.jpg/400x400bb.jpg"
   },
   {
     "id": "a123",
     "name": "Fleetwood Mac",
     "plays": 109,
     "hue": 208,
-    "influence": 0.24
+    "influence": 0.24,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/cc/0b/64cc0b3b-92fb-66cf-1240-e2afba504e4b/603497863105.jpg/400x400bb.jpg"
   },
   {
     "id": "a124",
     "name": "Lauren Daigle",
     "plays": 498,
     "hue": 245,
-    "influence": 0.4
+    "influence": 0.4,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/aa/2b/b9/aa2bb92a-4ace-da16-5118-21b78935e185/829619167054.jpg/400x400bb.jpg"
   },
   {
     "id": "a125",
     "name": "Billie Eilish & Khalid",
     "plays": 362,
     "hue": 282,
-    "influence": 0.05
+    "influence": 0.05,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/27/94/d4/2794d4fc-c3e2-2373-3e6c-dd82fd5aefe6/18UMGIM18200.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a126",
     "name": "Bailey Zimmerman",
     "plays": 205,
     "hue": 319,
-    "influence": 0.56
+    "influence": 0.56,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1d/a3/55/1da35509-ea85-d568-d29d-83e464f53ff9/093624856498.jpg/400x400bb.jpg"
   },
   {
     "id": "a127",
     "name": "Halsey",
     "plays": 311,
     "hue": 356,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0a/0f/fa/0a0ffabf-43c3-c076-6d33-132c65859b33/17UMGIM86564.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a128",
     "name": "Disturbed",
     "plays": 465,
     "hue": 33,
-    "influence": 0.08
+    "influence": 0.08,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/32/2b/12/322b1228-a133-3317-8d05-742669b700ec/093624926245.jpg/400x400bb.jpg"
   },
   {
     "id": "a129",
     "name": "Frank Ocean",
     "plays": 224,
     "hue": 70,
-    "influence": 0.42
+    "influence": 0.42,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/400x400bb.jpg"
   },
   {
     "id": "a130",
     "name": "Ivan Cornejo",
     "plays": 348,
     "hue": 107,
-    "influence": 0.25
+    "influence": 0.25,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/47/93/82/47938237-89be-1bf1-0ec4-a12026bbccf1/734126994553.jpg/400x400bb.jpg"
   },
   {
     "id": "a131",
     "name": "George Michael",
     "plays": 313,
     "hue": 144,
-    "influence": 0.69
+    "influence": 0.69,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ee/49/ac/ee49accc-78bd-bcdb-1aff-c40c1ac3ccc4/074643959520.jpg/400x400bb.jpg"
   },
   {
     "id": "a132",
     "name": "Coldplay",
     "plays": 259,
     "hue": 181,
-    "influence": 0.92
+    "influence": 0.92,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0c/82/48/0c8248a8-4a5b-d30d-8056-f32d650d2fc9/190295978068.jpg/400x400bb.jpg"
   },
   {
     "id": "a133",
     "name": "Conan Gray",
     "plays": 21,
     "hue": 218,
-    "influence": 0.79
+    "influence": 0.79,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/18/08/a1/1808a1be-b5a9-5e69-583d-b8a357efd760/19UM1IM12338.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a134",
     "name": "Kesha",
     "plays": 362,
     "hue": 255,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/49/e8/32/49e832df-971a-23a5-5f73-50b4b5d63e38/886446601229.jpg/400x400bb.jpg"
   },
   {
     "id": "a135",
     "name": "Calum Scott",
     "plays": 474,
     "hue": 292,
-    "influence": 0.89
+    "influence": 0.89,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/cd/12/9f/cd129f77-7690-7440-2a25-d9c7f39889d8/17UM1IM44770.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a136",
     "name": "Gyptian",
     "plays": 261,
     "hue": 329,
-    "influence": 0.92
+    "influence": 0.92,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cf/47/b6/cf47b6a1-0545-18da-18ae-1962990385c2/054645191265.jpg/400x400bb.jpg"
   },
   {
     "id": "a137",
     "name": "Wayne Wonder",
     "plays": 163,
     "hue": 6,
-    "influence": 0.02
+    "influence": 0.02,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/0e/15/d20e1582-5991-2c3d-6df7-367cd7fd3d1e/054645255561.jpg/400x400bb.jpg"
   },
   {
     "id": "a138",
     "name": "Sean Kingston",
     "plays": 345,
     "hue": 43,
-    "influence": 0.12
+    "influence": 0.12,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/78/1e/cd/781ecd93-78a8-a27b-b4fb-db85314cca92/888880493637.jpg/400x400bb.jpg"
   },
   {
     "id": "a139",
     "name": "Serani",
     "plays": 236,
     "hue": 80,
-    "influence": 0.87
+    "influence": 0.87,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ad/ff/c8/adffc8af-6844-13b7-d09e-ff9db3633bb9/Serani_-_No_Games.jpg/400x400bb.jpg"
   },
   {
     "id": "a140",
     "name": "Shaggy",
     "plays": 80,
     "hue": 117,
-    "influence": 0.87
+    "influence": 0.87,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7a/fc/85/7afc8538-7c81-9ecc-f586-df664536fb1d/13UABIM53418.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a141",
     "name": "Sean Paul",
     "plays": 420,
     "hue": 154,
-    "influence": 0.46
+    "influence": 0.46,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/6b/a9/89/6ba9895c-5aff-8be1-4ff9-9f88369077b1/dj.decwpjor.jpg/400x400bb.jpg"
   },
   {
     "id": "a142",
     "name": "Kevin Lyttle",
     "plays": 327,
     "hue": 191,
-    "influence": 0.4
+    "influence": 0.4,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c3/af/d3/c3afd31c-721e-faa2-da73-b3d0b381d9bb/s02.agetghia.jpg/400x400bb.jpg"
   },
   {
     "id": "a143",
     "name": "Sister Nancy",
     "plays": 205,
     "hue": 228,
-    "influence": 0.68
+    "influence": 0.68,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ef/8d/13/ef8d1336-8f2a-396f-a07f-584fa573cb67/6041.jpg/400x400bb.jpg"
   },
   {
     "id": "a144",
     "name": "Bob Marley & The Wailers",
     "plays": 282,
     "hue": 265,
-    "influence": 0.57
+    "influence": 0.57,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/c2/0d/3cc20dcc-8f4e-f060-36dd-7de52a7ec8fe/12UMGIM14712.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a145",
     "name": "YG Marley",
     "plays": 290,
     "hue": 302,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/da/b4/f2dab4af-f209-1563-ff58-98fa5bd2920a/cover_4062851821834.jpg/400x400bb.jpg"
   },
   {
     "id": "a146",
     "name": "Iyaz",
     "plays": 238,
     "hue": 339,
-    "influence": 0.43
+    "influence": 0.43,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/c0/13/1b/mzi.nnistjgw.jpg/400x400bb.jpg"
   },
   {
     "id": "a147",
     "name": "Etana",
     "plays": 151,
     "hue": 16,
-    "influence": 0.67
+    "influence": 0.67,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bc/ad/9e/bcad9e47-1581-4db6-6264-9573c9974b4f/054645195966.jpg/400x400bb.jpg"
   },
   {
     "id": "a148",
     "name": "Chaka Demus & Pliers",
     "plays": 89,
     "hue": 53,
-    "influence": 0.75
+    "influence": 0.75,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/11/b8/da/11b8dad0-d6f4-0daf-0bdb-a8bc9a07ce11/06UMGIM64118.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a149",
     "name": "UB40",
     "plays": 384,
     "hue": 90,
-    "influence": 0.85
+    "influence": 0.85,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/84/c2/52/84c25239-f4a6-1b09-c046-9669784497d6/00077778641254.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a150",
     "name": "Original Koffee",
     "plays": 100,
     "hue": 127,
-    "influence": 0.69
+    "influence": 0.69,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/0d/6b/b70d6b59-b509-eef7-0238-d7bafdcb7187/886447522134_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a151",
     "name": "Evanescence",
     "plays": 336,
     "hue": 164,
-    "influence": 0.93
+    "influence": 0.93,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/10/4c/21/104c21e6-9ef0-4d3a-d1bd-d47167f121e5/00601501406300.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a152",
     "name": "Three Days Grace",
     "plays": 203,
     "hue": 201,
-    "influence": 0.94
+    "influence": 0.94,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/cf/b4/5f/mzi.vgwnjneb.jpg/400x400bb.jpg"
   },
   {
     "id": "a153",
     "name": "System Of A Down",
     "plays": 437,
     "hue": 238,
-    "influence": 0.41
+    "influence": 0.41,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/82/51/52/825152b4-9423-b23b-c036-cc67ead732d4/888888046775.jpg/400x400bb.jpg"
   },
   {
     "id": "a154",
     "name": "Metallica",
     "plays": 178,
     "hue": 275,
-    "influence": 0.56
+    "influence": 0.56,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b8/5a/82/b85a8259-60d9-bfaa-770a-2baac8380e87/858978005196.png/400x400bb.jpg"
   },
   {
     "id": "a155",
     "name": "AC/DC",
     "plays": 290,
     "hue": 312,
-    "influence": 0.07
+    "influence": 0.07,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Features114/v4/fc/c2/f8/fcc2f850-1d81-7440-c0a0-de7fcef1e911/dj.rrgizfic.jpg/400x400bb.jpg"
   },
   {
     "id": "a156",
     "name": "Deftones",
     "plays": 422,
     "hue": 349,
-    "influence": 0.02
+    "influence": 0.02,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/27/cb/b4/27cbb40e-f8c6-dede-9c69-62089a873fa9/093624919803.jpg/400x400bb.jpg"
   },
   {
     "id": "a157",
     "name": "LINKIN PARK",
     "plays": 267,
     "hue": 26,
-    "influence": 0.28
+    "influence": 0.28,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/13/44/05/134405bd-9e27-a678-8953-b5f724201f95/093624948988.jpg/400x400bb.jpg"
   },
   {
     "id": "a158",
     "name": "Nickelback",
     "plays": 289,
     "hue": 63,
-    "influence": 0.03
+    "influence": 0.03,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ad/16/b7/ad16b7c9-2779-d2e5-0fca-83aeff09f4b6/mzi.exqcjkkz.jpg/400x400bb.jpg"
   },
   {
     "id": "a159",
     "name": "Black Sabbath",
     "plays": 244,
     "hue": 100,
-    "influence": 0.57
+    "influence": 0.57,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/be/27/91/be279120-2285-16c6-c7ba-9d6643d4a948/075992732727.jpg/400x400bb.jpg"
   },
   {
     "id": "a160",
     "name": "Avenged Sevenfold",
     "plays": 48,
     "hue": 137,
-    "influence": 0.4
+    "influence": 0.4,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c3/8f/cb/c38fcb39-bbca-3e38-4b5d-1add583d2e92/093624942214.jpg/400x400bb.jpg"
   },
   {
     "id": "a161",
     "name": "Audioslave",
     "plays": 252,
     "hue": 174,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/9c/b6/c2/9cb6c246-3626-7789-26a9-79b787e5668d/dj.owymmnty.jpg/400x400bb.jpg"
   },
   {
     "id": "a162",
     "name": "Led Zeppelin",
     "plays": 471,
     "hue": 211,
-    "influence": 0.99
+    "influence": 0.99,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/5c/15/9b/5c159b27-95ca-b9a7-84e3-28e795fffd39/dj.kvkrpptq.jpg/400x400bb.jpg"
   },
   {
     "id": "a163",
     "name": "Korn",
     "plays": 381,
     "hue": 248,
-    "influence": 0.24
+    "influence": 0.24,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/09/2b/e7/092be7d0-7697-220d-c000-97f366e723e4/mzi.anacpwuj.jpg/400x400bb.jpg"
   },
   {
     "id": "a164",
     "name": "America",
     "plays": 322,
     "hue": 285,
-    "influence": 0.1
+    "influence": 0.1,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/20/c6/c4/20c6c488-4791-6c15-323f-e7ea79a01f31/mzi.dbcrqaoq.jpg/400x400bb.jpg"
   },
   {
     "id": "a165",
     "name": "Buffalo Springfield",
     "plays": 266,
     "hue": 322,
-    "influence": 0.18
+    "influence": 0.18,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/14/12/bb/1412bb4b-d4bd-3fb6-e282-3e96b5988eed/mzi.vdwggpmt.jpg/400x400bb.jpg"
   },
   {
     "id": "a166",
     "name": "Tracy Chapman",
     "plays": 190,
     "hue": 359,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b8/c4/31/b8c431e9-a67d-3917-72e5-be9f5a1ebc46/075596077460.jpg/400x400bb.jpg"
   },
   {
     "id": "a167",
     "name": "Of Monsters and Men",
     "plays": 55,
     "hue": 36,
-    "influence": 0.13
+    "influence": 0.13,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a3/a8/c2/a3a8c2ee-79ca-f4f0-8adb-0060e04432fd/12UMGIM10062.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a168",
     "name": "The Lumineers",
     "plays": 97,
     "hue": 73,
-    "influence": 0.87
+    "influence": 0.87,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/34/43/5e/34435ee1-dcee-1c60-f3ab-f53965790f3c/18540.jpg/400x400bb.jpg"
   },
   {
     "id": "a169",
     "name": "Burl Ives",
     "plays": 208,
     "hue": 110,
-    "influence": 0.35
+    "influence": 0.35,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/17/f1/7b/17f17b40-c8cb-f795-00d3-959dea4872eb/06UMGIM17860.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a170",
     "name": "Oliver Anthony Music",
     "plays": 380,
     "hue": 147,
-    "influence": 0.26
+    "influence": 0.26,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/32/fc/0e/32fc0e06-473b-0697-88e9-338876afb8d6/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a171",
     "name": "Bon Iver",
     "plays": 384,
     "hue": 184,
-    "influence": 0.02
+    "influence": 0.02,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/21/2f/ea/212fea18-5fdc-ba4d-5dd7-1b07aaa88b67/656605211565.tif/400x400bb.jpg"
   },
   {
     "id": "a172",
     "name": "The Mamas & The Papas",
     "plays": 435,
     "hue": 221,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/19/39/88/193988e9-02c3-b879-5881-2d31c9774bbf/06UMGIM04100.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a173",
     "name": "Tom Petty",
     "plays": 53,
     "hue": 258,
-    "influence": 0.62
+    "influence": 0.62,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/f3/71/47/f37147d5-d029-880b-bdc1-5929c907909a/06UMGIM04214.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a174",
     "name": "Tyler Childers",
     "plays": 154,
     "hue": 295,
-    "influence": 0.85
+    "influence": 0.85,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/6d/40/34/6d40345d-f6dc-6e35-c5cd-510c1314f37f/859727285258_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a175",
     "name": "Enya",
     "plays": 266,
     "hue": 332,
-    "influence": 0.84
+    "influence": 0.84,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b0/84/b3/b084b388-41b6-8767-23dc-341a76fcd64d/mzi.bwmjkjwa.jpg/400x400bb.jpg"
   },
   {
     "id": "a176",
     "name": "New Radicals",
     "plays": 438,
     "hue": 9,
-    "influence": 0.26
+    "influence": 0.26,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ee/f9/91/eef991d3-6308-a39a-cfed-48a774587574/00008811185824.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a177",
     "name": "Joe Walsh",
     "plays": 435,
     "hue": 46,
-    "influence": 0.47
+    "influence": 0.47,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/21/6d/20/216d2054-fcc6-5922-ab3a-20af68cbe4d1/mzi.nzhjoleq.jpg/400x400bb.jpg"
   },
   {
     "id": "a178",
     "name": "Neil Young",
     "plays": 489,
     "hue": 83,
-    "influence": 0.8
+    "influence": 0.8,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4d/45/41/4d45414c-6364-51cf-2874-7c8aa755caaa/mzi.oetoyyot.jpg/400x400bb.jpg"
   },
   {
     "id": "a179",
     "name": "Sara Bareilles",
     "plays": 316,
     "hue": 120,
-    "influence": 0.92
+    "influence": 0.92,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8a/22/1c/8a221cd8-015e-6221-c0eb-fc3ccfa5a37c/827969482124.jpg/400x400bb.jpg"
   },
   {
     "id": "a180",
     "name": "The Moldy Peaches",
     "plays": 464,
     "hue": 157,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/dc/55/b6/mzi.umfxwamr.jpg/400x400bb.jpg"
   },
   {
     "id": "a181",
     "name": "Violent Femmes",
     "plays": 500,
     "hue": 194,
-    "influence": 0.87
+    "influence": 0.87,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/23/e8/e6/23e8e65e-5e30-5476-2ba2-151a8632a1b7/18CRGIM06111.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a182",
     "name": "Riff Wood",
     "plays": 119,
     "hue": 231,
-    "influence": 0.23
+    "influence": 0.23,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/01/34/6b013457-b8a8-3e60-c390-bc7515fb6fee/193436468145_RIFFWOODSHYGUYCOVERART.jpg/400x400bb.jpg"
   },
   {
     "id": "a183",
     "name": "Girl Ultra & Little Jesus",
     "plays": 445,
     "hue": 268,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/de/db/f6/dedbf664-a438-00ca-710a-c9012df3cad3/8445162588546.jpg/400x400bb.jpg"
   },
   {
     "id": "a184",
     "name": "SAOTOMAMORE",
     "plays": 215,
     "hue": 305,
-    "influence": 0.94
+    "influence": 0.94,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4e/58/73/4e587372-bd8d-8731-4a03-5dd514006c3f/1963620506392_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a185",
     "name": "Dean Blunt",
     "plays": 466,
     "hue": 342,
-    "influence": 0.62
+    "influence": 0.62,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/2f/51/22/2f51224f-40f6-0c06-0d1c-cf7502d4f339/Dean_Blunt.jpg/400x400bb.jpg"
   },
   {
     "id": "a186",
     "name": "Green Day",
     "plays": 62,
     "hue": 19,
-    "influence": 0.5
+    "influence": 0.5,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/88/83/e7/8883e74b-1b7c-0725-09de-21e4e00d54b5/093624915713.jpg/400x400bb.jpg"
   },
   {
     "id": "a187",
     "name": "Gorillaz",
     "plays": 231,
     "hue": 56,
-    "influence": 0.06
+    "influence": 0.06,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/5b/8d/47/5b8d47da-71ea-93ab-dffc-733f11332659/825646290703.jpg/400x400bb.jpg"
   },
   {
     "id": "a188",
     "name": "Lustra",
     "plays": 169,
     "hue": 93,
-    "influence": 0.9
+    "influence": 0.9,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1a/ae/25/1aae251d-5269-b140-ad83-4285753c3654/mzi.pgjqczau.tif/400x400bb.jpg"
   },
   {
     "id": "a189",
     "name": "All Time Low",
     "plays": 479,
     "hue": 130,
-    "influence": 0.72
+    "influence": 0.72,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/7a/ac/cc/mzi.igvemwis.jpg/400x400bb.jpg"
   },
   {
     "id": "a190",
     "name": "The Red Jumpsuit Apparatus",
     "plays": 52,
     "hue": 167,
-    "influence": 0.19
+    "influence": 0.19,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d7/91/52/d791529f-0b82-33ee-8345-a5962db810e5/13UABIM74027.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a191",
     "name": "The All-American Rejects",
     "plays": 128,
     "hue": 204,
-    "influence": 0.58
+    "influence": 0.58,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/64/60/a8646043-c1e0-11cd-a653-6ef608404ed3/06UMGIM08751.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a192",
     "name": "BOYS LIKE GIRLS",
     "plays": 43,
     "hue": 241,
-    "influence": 0.32
+    "influence": 0.32,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/04/5a/e4/045ae4df-461d-db63-9b6f-cb48507c682d/mzi.ddfuhxng.jpg/400x400bb.jpg"
   },
   {
     "id": "a193",
     "name": "A Day to Remember",
     "plays": 117,
     "hue": 278,
-    "influence": 0.55
+    "influence": 0.55,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/de/ff/da/deffda50-12f1-01e3-c928-bd02eb91d1f5/19CRGIM19275.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a194",
     "name": "Rise Against",
     "plays": 67,
     "hue": 315,
-    "influence": 0.44
+    "influence": 0.44,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/87/d3/7e/87d37ee6-ad9c-c676-9239-5f1651780001/00602537898824.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a195",
     "name": "Basement",
     "plays": 114,
     "hue": 352,
-    "influence": 0.69
+    "influence": 0.69,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/14/ac/7b/14ac7b28-e4ae-1ab8-63b7-17c9b47b678a/43554.jpg/400x400bb.jpg"
   },
   {
     "id": "a196",
     "name": "Daft Punk, Pharrell Williams & Nile Rodgers",
     "plays": 262,
     "hue": 29,
-    "influence": 0.29
+    "influence": 0.29,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/400x400bb.jpg"
   },
   {
     "id": "a197",
     "name": "Paramore",
     "plays": 107,
     "hue": 66,
-    "influence": 0.44
+    "influence": 0.44,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/9a/3a/26/9a3a2608-29a7-5585-f990-cdfeb10b7394/075679955005.jpg/400x400bb.jpg"
   },
   {
     "id": "a198",
     "name": "blink-182",
     "plays": 113,
     "hue": 103,
-    "influence": 0.76
+    "influence": 0.76,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ed/b7/8b/edb78b6a-db5a-2eb3-ea51-61bfefb9c031/16UMGIM35661.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a199",
     "name": "J Balvin & Bad Bunny",
     "plays": 259,
     "hue": 140,
-    "influence": 0.05
+    "influence": 0.05,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/77/32/74/7732746d-25e5-baae-b921-bad4a07d87b1/19UMGIM55524.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a200",
     "name": "Eslabon Armado & Peso Pluma",
     "plays": 176,
     "hue": 177,
-    "influence": 0.58
+    "influence": 0.58,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b1/9b/95/b19b9506-5696-ad86-1c85-d198503adfbf/816144021906_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a201",
     "name": "Tainy, Anuel AA & Ozuna",
     "plays": 108,
     "hue": 214,
-    "influence": 0.38
+    "influence": 0.38,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/bc/86/c3/bc86c389-d022-cd6e-d8d9-96981621e507/19UMGIM60949.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a202",
     "name": "Bad Bunny & Bomba Estéreo",
     "plays": 231,
     "hue": 251,
-    "influence": 0.43
+    "influence": 0.43,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/3e/04/eb/3e04ebf6-370f-f59d-ec84-2c2643db92f1/196626945068.jpg/400x400bb.jpg"
   },
   {
     "id": "a203",
     "name": "Bad Bunny",
     "plays": 349,
     "hue": 288,
-    "influence": 0.75
+    "influence": 0.75,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/cf/3a/db/cf3adbe6-8ea1-f60f-60fd-713eefda3962/193483317984.jpg/400x400bb.jpg"
   },
   {
     "id": "a204",
     "name": "JHAYCO, J Balvin & Bad Bunny",
     "plays": 71,
     "hue": 325,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/4f/64/d2/4f64d264-ce5b-64a7-3d11-5d7550613db1/22UM1IM25832.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a205",
     "name": "Eslabon Armado",
     "plays": 170,
     "hue": 2,
-    "influence": 0.59
+    "influence": 0.59,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/9d/cc/2a/9dcc2a9e-1283-c667-12c1-f336e9f589c8/816144021401_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a206",
     "name": "Kali Uchis",
     "plays": 14,
     "hue": 39,
-    "influence": 0.31
+    "influence": 0.31,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c2/21/4a/c2214a0a-1355-770e-eef2-7b872f433e02/20UMGIM71274.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a207",
     "name": "Camila Cabello",
     "plays": 375,
     "hue": 76,
-    "influence": 0.59
+    "influence": 0.59,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/85/28/70/85287029-19b9-cbe3-d1ab-300781875bf4/886446870298.jpg/400x400bb.jpg"
   },
   {
     "id": "a208",
     "name": "Don Omar",
     "plays": 257,
     "hue": 113,
-    "influence": 0.23
+    "influence": 0.23,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/be/9d/22/be9d22c2-99b2-9e26-11dd-d1a043779b8d/10UMGIM27798.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a209",
     "name": "Daddy Yankee",
     "plays": 431,
     "hue": 150,
-    "influence": 0.07
+    "influence": 0.07,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/66/f0/2f66f0f1-c3c2-9dc0-8391-04804cabc8cf/24CRGIM46808.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a210",
     "name": "Natanael Cano",
     "plays": 348,
     "hue": 187,
-    "influence": 0.9
+    "influence": 0.9,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/75/58/f97558cf-9cce-0923-42df-196cc93c901a/050742369545_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a211",
     "name": "Fuerza Regida",
     "plays": 32,
     "hue": 224,
-    "influence": 0.06
+    "influence": 0.06,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/21/e3/b7/21e3b74f-571b-07ce-567b-a2aa8274c7b2/196871548922.jpg/400x400bb.jpg"
   },
   {
     "id": "a212",
     "name": "Grupo Frontera & Bad Bunny",
     "plays": 67,
     "hue": 261,
-    "influence": 0.52
+    "influence": 0.52,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b6/74/4d/b6744dbd-77ed-413a-3777-5ac6a2e780eb/197188732554.jpg/400x400bb.jpg"
   },
   {
     "id": "a213",
     "name": "MGMT",
     "plays": 325,
     "hue": 298,
-    "influence": 0.08
+    "influence": 0.08,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e5/06/cc/e506ccd5-56ec-3d4c-69f7-14900bea74f0/mzi.bbgsikee.jpg/400x400bb.jpg"
   },
   {
     "id": "a214",
     "name": "Jelani Aryeh",
     "plays": 187,
     "hue": 335,
-    "influence": 0.63
+    "influence": 0.63,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/28/39/a4/2839a45d-60b4-9941-8393-dfe2369e81bd/192641459405_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a215",
     "name": "Weezer",
     "plays": 458,
     "hue": 12,
-    "influence": 0.36
+    "influence": 0.36,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/98/ef/02/98ef026e-7d73-f8ce-90d0-b41371ad20aa/16UMGIM52970.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a216",
     "name": "Passion Pit",
     "plays": 390,
     "hue": 49,
-    "influence": 0.44
+    "influence": 0.44,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/34/c6/0b/34c60b2b-aed6-e38c-43cf-9fa34a45dd2f/886443506329.jpg/400x400bb.jpg"
   },
   {
     "id": "a217",
     "name": "Florence + the Machine",
     "plays": 323,
     "hue": 86,
-    "influence": 0.9
+    "influence": 0.9,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/46/45/58/46455821-202f-5fac-ee42-87853cb9fa03/09UMGIM14223.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a218",
     "name": "JAWNY",
     "plays": 57,
     "hue": 123,
-    "influence": 0.16
+    "influence": 0.16,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/bd/dd/acbddde8-2cb0-0b42-baf4-6a5ec120cea8/19UM1IM05305.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a219",
     "name": "Cigarettes After Sex",
     "plays": 251,
     "hue": 160,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b3/5e/0f/b35e0fbe-2370-fc48-0f0c-977525e93bf2/720841214601_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a220",
     "name": "girl in red",
     "plays": 48,
     "hue": 197,
-    "influence": 0.08
+    "influence": 0.08,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c3/53/08/c35308ff-7946-7612-ec72-ede771acc570/5054960920149_1.jpg/400x400bb.jpg"
   },
   {
     "id": "a221",
     "name": "Beck",
     "plays": 276,
     "hue": 234,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/35/a5/a8/35a5a83a-7a68-2390-c069-6bee759f047a/00075021017924.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a222",
     "name": "Mauro Pagliarino",
     "plays": 104,
     "hue": 271,
-    "influence": 0.18
+    "influence": 0.18,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e3/a6/1c/e3a61c21-1c99-43b7-f3b4-9c63de5f41b6/5904892152920.jpg/400x400bb.jpg"
   },
   {
     "id": "a223",
     "name": "Arctic Monkeys",
     "plays": 477,
     "hue": 308,
-    "influence": 0.79
+    "influence": 0.79,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/82/90/14/829014ad-a301-62ab-bee6-f4cca4457411/mzi.hozudery.jpg/400x400bb.jpg"
   },
   {
     "id": "a224",
     "name": "Glass Animals",
     "plays": 487,
     "hue": 345,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/da/8b/77/da8b7731-6f4f-eacf-5e74-8b23389eefa1/20UMGIM03371.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a225",
     "name": "Lord Huron",
     "plays": 210,
     "hue": 22,
-    "influence": 0.17
+    "influence": 0.17,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/55/41/4a/55414a18-861a-79d1-e575-5bf8cf205dbe/886445056839_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a226",
     "name": "Charly Black",
     "plays": 270,
     "hue": 59,
-    "influence": 0.01
+    "influence": 0.01,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ed/ba/86/edba86f5-818d-6698-f504-f9c073668686/602547831613_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a227",
     "name": "Maluma",
     "plays": 470,
     "hue": 96,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/05/17/51/051751c2-d6cd-c466-9e0d-c185d8e22897/886445195026.jpg/400x400bb.jpg"
   },
   {
     "id": "a228",
     "name": "HoneyLuv",
     "plays": 457,
     "hue": 133,
-    "influence": 0.15
+    "influence": 0.15,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e9/94/5c/e9945c6f-121b-522f-e2c2-501713554c9f/25UMGIM74848.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a229",
     "name": "Charly Black & Pop Style",
     "plays": 415,
     "hue": 170,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/d3/55/47/d3554747-3876-e13f-b4af-78466a69d495/0.jpg/400x400bb.jpg"
   },
   {
     "id": "a230",
     "name": "Arcángel",
     "plays": 340,
     "hue": 207,
-    "influence": 0.79
+    "influence": 0.79,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/22/4e/72/224e725e-aa32-9332-626c-98ea931d984e/898717002017_art.jpg/400x400bb.jpg"
   },
   {
     "id": "a231",
     "name": "KAROL G & Anuel AA",
     "plays": 464,
     "hue": 244,
-    "influence": 0.68
+    "influence": 0.68,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/3c/36/423c3606-2ea7-fe23-9d74-b29e8ddbef7f/19UMGIM28164.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a232",
     "name": "The Movement",
     "plays": 60,
     "hue": 281,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b4/90/8c/b4908cb9-7bff-c683-e0b9-3a91af7d2713/811868978536_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a233",
     "name": "Ayo Jay",
     "plays": 293,
     "hue": 318,
-    "influence": 0.36
+    "influence": 0.36,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/6a/0f/b2/6a0fb223-8e9a-b223-5397-b6408f853200/886445981315.jpg/400x400bb.jpg"
   },
   {
     "id": "a234",
     "name": "311",
     "plays": 179,
     "hue": 355,
-    "influence": 0.93
+    "influence": 0.93,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8e/07/51/8e0751ce-6e7d-150e-84a2-8c1575967e64/886445199369.jpg/400x400bb.jpg"
   },
   {
     "id": "a235",
     "name": "Damian \"Jr. Gong\" Marley",
     "plays": 114,
     "hue": 32,
-    "influence": 0.64
+    "influence": 0.64,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/78/1f/7e/781f7e4d-d4ce-4a3d-3154-70ca864b811c/06UMGIM25409.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a236",
     "name": "Tanto Metro & Devonte",
     "plays": 294,
     "hue": 69,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/58/5d/cf/585dcffe-6178-eb33-1ed0-d21eaa0d0b7b/itunes_094.jpg/400x400bb.jpg"
   },
   {
     "id": "a237",
     "name": "Vybz Kartel",
     "plays": 62,
     "hue": 106,
-    "influence": 0.06
+    "influence": 0.06,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cf/ea/1d/cfea1dee-8fe2-f667-e872-805842546b19/889326117896.jpg/400x400bb.jpg"
   },
   {
     "id": "a238",
     "name": "Wizkid & Asake",
     "plays": 177,
     "hue": 143,
-    "influence": 0.18
+    "influence": 0.18,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f0/d9/fb/f0d9fbd9-4fb2-0b9f-4178-97c2b865f22d/199316437584_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a239",
     "name": "Wizkid",
     "plays": 483,
     "hue": 180,
-    "influence": 0.82
+    "influence": 0.82,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/42/df/1a/42df1a9b-dd10-9e40-4513-420ac0cc1e1e/0.jpg/400x400bb.jpg"
   },
   {
     "id": "a240",
     "name": "Afro B",
     "plays": 208,
     "hue": 217,
-    "influence": 0.88
+    "influence": 0.88,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c5/e7/88/c5e78815-8beb-76bb-96fb-08b4155e8390/5056167108474.png/400x400bb.jpg"
   },
   {
     "id": "a241",
     "name": "Davido",
     "plays": 444,
     "hue": 254,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/25/10/e825104f-95ac-5638-38bf-a3a3563ac24b/886446558943.jpg/400x400bb.jpg"
   },
   {
     "id": "a242",
     "name": "Burna Boy",
     "plays": 72,
     "hue": 291,
-    "influence": 0.78
+    "influence": 0.78,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8d/58/f1/8d58f169-5f12-3574-3ba1-3a482eefe459/075679849304.jpg/400x400bb.jpg"
   },
   {
     "id": "a243",
     "name": "Tems",
     "plays": 301,
     "hue": 328,
-    "influence": 0.18
+    "influence": 0.18,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f8/21/8a/f8218a85-c9a5-e611-3187-62ee68447ca7/196871461238.jpg/400x400bb.jpg"
   },
   {
     "id": "a244",
     "name": "Tyla",
     "plays": 407,
     "hue": 5,
-    "influence": 0.7
+    "influence": 0.7,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2a/cc/48/2acc48c7-e092-6b83-ce65-ff80ac6eb51c/196872520118.jpg/400x400bb.jpg"
   },
   {
     "id": "a245",
     "name": "Ayra Starr",
     "plays": 362,
     "hue": 42,
-    "influence": 0.76
+    "influence": 0.76,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/93/c1/9293c1af-2881-bcb7-439f-99a516e5d715/5059449090122.png/400x400bb.jpg"
   },
   {
     "id": "a246",
     "name": "Asake & Wizkid",
     "plays": 46,
     "hue": 79,
-    "influence": 0.86
+    "influence": 0.86,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/38/34/59/383459da-ba6a-4bee-67df-7de269764383/197342707992_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a247",
     "name": "Korede Bello",
     "plays": 454,
     "hue": 116,
-    "influence": 0.21
+    "influence": 0.21,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3a/ca/10/3aca1053-8ab2-d2f3-c619-1be8ab902aff/5054960142251_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a248",
     "name": "Asake",
     "plays": 401,
     "hue": 153,
-    "influence": 0.55
+    "influence": 0.55,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/5e/4f/66/5e4f6644-a234-d037-609d-7ed53fd6c7f9/194690909856_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a249",
     "name": "Kizz Daniel & Tekno",
     "plays": 463,
     "hue": 190,
-    "influence": 0.61
+    "influence": 0.61,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/23/6c/be/236cbeb3-259c-9996-31a2-7bef8ca10bcd/194690837296_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a250",
     "name": "Adekunle Gold & Zinoleesky",
     "plays": 28,
     "hue": 227,
-    "influence": 0.57
+    "influence": 0.57,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ff/6b/ee/ff6beec6-f45e-139b-4330-235abd0a65c0/23UMGIM16186.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a251",
     "name": "Joeboy",
     "plays": 16,
     "hue": 264,
-    "influence": 0.01
+    "influence": 0.01,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/fd/50/60/fd506047-4629-6e1f-831a-808e31e841c1/717340226150_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a252",
     "name": "Marvin Sapp",
     "plays": 164,
     "hue": 301,
-    "influence": 0.9
+    "influence": 0.9,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e0/84/8d/e0848d59-5928-1ebc-0b15-aa43b0d80ae4/mzi.gkksjwhv.jpg/400x400bb.jpg"
   },
   {
     "id": "a253",
     "name": "Fred Hammond & Radical for Christ",
     "plays": 325,
     "hue": 338,
-    "influence": 0.63
+    "influence": 0.63,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ea/22/b9/ea22b9f1-3b70-da08-b029-44b987c21e49/mzi.jbdfybor.jpg/400x400bb.jpg"
   },
   {
     "id": "a254",
     "name": "Hezekiah Walker",
     "plays": 395,
     "hue": 15,
-    "influence": 0.43
+    "influence": 0.43,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/f8/7a/14f87ad5-9b7e-783a-2d01-718d250b029f/886443364004.jpg/400x400bb.jpg"
   },
   {
     "id": "a255",
     "name": "Koryn Hawthorne",
     "plays": 426,
     "hue": 52,
-    "influence": 0.42
+    "influence": 0.42,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/7c/e5/c3/7ce5c37c-fdb4-3b71-6016-9baa8ad7b996/886446639536.jpg/400x400bb.jpg"
   },
   {
     "id": "a256",
     "name": "Kirk Franklin",
     "plays": 22,
     "hue": 89,
-    "influence": 0.12
+    "influence": 0.12,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ce/b7/ef/ceb7efe1-ac93-f6a4-e2df-a76f31157c15/mzi.zbgriqml.jpg/400x400bb.jpg"
   },
   {
     "id": "a257",
     "name": "Zacardi Cortez",
     "plays": 126,
     "hue": 126,
-    "influence": 0.58
+    "influence": 0.58,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/85/13/34/85133497-3b87-2bcf-29ff-2e690b09c43e/16718.jpg/400x400bb.jpg"
   },
   {
     "id": "a258",
     "name": "Tasha Cobbs Leonard",
     "plays": 441,
     "hue": 163,
-    "influence": 0.92
+    "influence": 0.92,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/38/96/95/3896956b-8e1d-d2e5-9836-c76155ec05c5/13UABIM04882.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a259",
     "name": "Tamela Mann",
     "plays": 443,
     "hue": 200,
-    "influence": 0.51
+    "influence": 0.51,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/a1/0a/e2/a10ae234-4933-5cfb-053f-b6822b10de3a/886445962598.jpg/400x400bb.jpg"
   },
   {
     "id": "a260",
     "name": "Yolanda Adams",
     "plays": 416,
     "hue": 237,
-    "influence": 0.6
+    "influence": 0.6,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/17/bc/cd/17bccd83-a19d-c18c-bf7e-86fa7d228866/mzi.meywmhig.jpg/400x400bb.jpg"
   },
   {
     "id": "a261",
     "name": "William Murphy",
     "plays": 468,
     "hue": 274,
-    "influence": 0.57
+    "influence": 0.57,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/87/15/61/87156134-ae3d-f310-e591-ef46a9fc1159/886443161863.jpg/400x400bb.jpg"
   },
   {
     "id": "a262",
     "name": "The National",
     "plays": 40,
     "hue": 311,
-    "influence": 0.14
+    "influence": 0.14,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/21/8a/d8/218ad80a-d90c-c277-f5e8-fc8227d267e6/607618825263.png/400x400bb.jpg"
   },
   {
     "id": "a263",
     "name": "Mike Geno",
     "plays": 445,
     "hue": 348,
-    "influence": 0.09
+    "influence": 0.09,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3f/eb/11/3feb1141-b803-adcb-7646-d11b34825822/196053184610_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a264",
     "name": "DaBaby",
     "plays": 423,
     "hue": 25,
-    "influence": 0.52
+    "influence": 0.52,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b6/dd/13/b6dd13a8-11b6-cc13-3e51-232128658360/19UMGIM86412.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a265",
     "name": "MarchFourth",
     "plays": 161,
     "hue": 62,
-    "influence": 0.45
+    "influence": 0.45,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b5/47/9a/b5479af5-2df2-1791-c038-386644c5a16e/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a266",
     "name": "HUNTR/X, EJAE, AUDREY NUNA, REI AMI & KPop Demon Hunters Cast",
     "plays": 94,
     "hue": 99,
-    "influence": 0.46
+    "influence": 0.46,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a267",
     "name": "Saja Boys, Andrew Choi, Neckwav, Danny Chung, Kevin Woo, samUIL Lee & KPop Demon Hunters Cast",
     "plays": 230,
     "hue": 136,
-    "influence": 0.49
+    "influence": 0.49,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a268",
     "name": "Rumi, JINU, EJAE, Andrew Choi & KPop Demon Hunters Cast",
     "plays": 457,
     "hue": 173,
-    "influence": 0.4
+    "influence": 0.4,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a269",
     "name": "TWICE",
     "plays": 95,
     "hue": 210,
-    "influence": 0.1
+    "influence": 0.1,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a270",
     "name": "ILLIT",
     "plays": 165,
     "hue": 247,
-    "influence": 0.96
+    "influence": 0.96,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/3e/49/1e/3e491e43-4961-21ab-2abe-37fb1c0feb40/196922879227_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a271",
     "name": "KATSEYE",
     "plays": 224,
     "hue": 284,
-    "influence": 0.73
+    "influence": 0.73,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ad/92/ca/ad92ca90-90f5-eb46-7a56-e7b6b88584f7/25UMGIM37394.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a272",
     "name": "Stray Kids",
     "plays": 316,
     "hue": 321,
-    "influence": 0.1
+    "influence": 0.1,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/c1/47/24c147fc-cf70-0a4e-3e21-bd9a42617572/8809928952123_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a273",
     "name": "BTS",
     "plays": 197,
     "hue": 358,
-    "influence": 0.2
+    "influence": 0.2,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/40/d4/93/40d493e3-ac9e-1746-8d4c-f380f27c97cb/193483706238_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a274",
     "name": "BLACKPINK",
     "plays": 259,
     "hue": 35,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/48/3b/39/483b3943-ffb2-3e78-0721-623dbdf737b9/20UMGIM50590.rgb.jpg/400x400bb.jpg"
   },
   {
     "id": "a275",
     "name": "BIGBANG",
     "plays": 17,
     "hue": 72,
-    "influence": 0.96
+    "influence": 0.96,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5b/9b/8e/5b9b8ef2-998e-1210-8454-dfebfbf6271c/BB_COVER_IMAGE_4000.jpg/400x400bb.jpg"
   },
   {
     "id": "a276",
     "name": "NewJeans",
     "plays": 118,
     "hue": 109,
-    "influence": 0.81
+    "influence": 0.81,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/48/96/08/4896085e-b550-cb0a-3e5b-1f203521cb82/196922265464_Cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a277",
     "name": "Silent Movement",
     "plays": 62,
     "hue": 146,
-    "influence": 0.22
+    "influence": 0.22,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/aa/b1/1faab1be-18ab-2f6c-1cc3-d9a9aa529bc2/5059449216676.png/400x400bb.jpg"
   },
   {
     "id": "a278",
     "name": "Reiki",
     "plays": 177,
     "hue": 183,
-    "influence": 0.67
+    "influence": 0.67,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/24/d7/5c/24d75cc7-b699-0754-1219-dd94f13b862a/8033772774253.jpg/400x400bb.jpg"
   },
   {
     "id": "a279",
     "name": "Øneheart",
     "plays": 419,
     "hue": 220,
-    "influence": 0.92
+    "influence": 0.92,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/4c/e3/32/4ce332d0-3a03-3fcf-227c-bb3630cfe9f5/1963620998333_cover.jpg/400x400bb.jpg"
   },
   {
     "id": "a280",
     "name": "Luna Skyborne",
     "plays": 157,
     "hue": 257,
-    "influence": 0.77
+    "influence": 0.77,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/a0/d6/aa/a0d6aa2e-614d-fcce-c553-6d09b85dede2/8033772760591-1.jpg/400x400bb.jpg"
   },
   {
     "id": "a281",
     "name": "Stratus Waves",
     "plays": 188,
     "hue": 294,
-    "influence": 0.53
+    "influence": 0.53,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/17/aa/5917aa2c-5513-c3b2-ae83-e0d3463f0a15/5059449227573.png/400x400bb.jpg"
   },
   {
     "id": "a282",
     "name": "Baby Beethoven",
     "plays": 248,
     "hue": 331,
-    "influence": 0.51
+    "influence": 0.51,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b8/30/d2/b830d25c-8b18-6add-cb58-0642f5bbba04/10906.jpg/400x400bb.jpg"
   },
   {
     "id": "a283",
     "name": "Lianas",
     "plays": 205,
     "hue": 8,
-    "influence": 0.5
+    "influence": 0.5,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/c2/02/8ac20287-7c78-e8e4-1cf5-8e3b0b2e431b/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a284",
     "name": "Ancient Future Technologies",
     "plays": 39,
     "hue": 45,
-    "influence": 0.66
+    "influence": 0.66,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f8/6d/8c/f86d8c8f-6a7c-7146-1457-7998b49cd251/198082285269.png/400x400bb.jpg"
   },
   {
     "id": "a285",
     "name": "Lunarei",
     "plays": 201,
     "hue": 82,
-    "influence": 0.33
+    "influence": 0.33,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/69/b5/ef/69b5efd7-be0e-3677-a2c2-7e703459a49b/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a286",
     "name": "Pet Music Maetro",
     "plays": 350,
     "hue": 119,
-    "influence": 0.04
+    "influence": 0.04,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music117/v4/3b/dd/32/3bdd321d-3167-d10b-9553-b35d877f1d52/8033772880022.jpg/400x400bb.jpg"
   },
   {
     "id": "a287",
     "name": "Briar Moonwhisper",
     "plays": 166,
     "hue": 156,
-    "influence": 0.1
+    "influence": 0.1,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music49/v4/d2/65/75/d2657556-8f68-a41a-561c-12ffe6f16cd4/8033772774949.jpg/400x400bb.jpg"
   },
   {
     "id": "a288",
     "name": "Sleep Music Lullabies",
     "plays": 241,
     "hue": 193,
-    "influence": 0.19
+    "influence": 0.19,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/9f/87/8f/9f878f02-226f-3c27-2107-1c888a3c80a1/8033772899802.jpg/400x400bb.jpg"
   },
   {
     "id": "a289",
     "name": "Plenitude",
     "plays": 431,
     "hue": 230,
-    "influence": 0.99
+    "influence": 0.99,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/39/73/67/39736785-652d-a779-4fdc-0ad1aaebbb52/artwork.jpg/400x400bb.jpg"
   },
   {
     "id": "a290",
     "name": "Sounds of Nature White Noise for Mindfulness Meditation and Relaxation",
     "plays": 229,
     "hue": 267,
-    "influence": 0.28
+    "influence": 0.28,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/38/ab/70/38ab70fc-26c8-9f73-017b-bf697847dfb4/8033772866224.jpg/400x400bb.jpg"
   },
   {
     "id": "a291",
     "name": "Soothe My Soul",
     "plays": 336,
     "hue": 304,
-    "influence": 0.03
+    "influence": 0.03,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/93/f0/4893f034-3bc0-8e72-b93a-4c626f149101/198476935541.png/400x400bb.jpg"
   },
   {
     "id": "a292",
     "name": "dream reflections",
     "plays": 420,
     "hue": 341,
-    "influence": 0.74
+    "influence": 0.74,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e5/58/2e/e5582e5f-f815-a4f2-3005-0cc0b3d9304f/5059449156415.png/400x400bb.jpg"
   },
   {
     "id": "a293",
     "name": "Ania Tippkemper",
     "plays": 325,
     "hue": 18,
-    "influence": 0.97
+    "influence": 0.97,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/96/68/42/966842bd-9a26-35bd-1aa5-922702f5036b/5059449088259.png/400x400bb.jpg"
   },
   {
     "id": "a294",
     "name": "Forest Halo",
     "plays": 91,
     "hue": 55,
-    "influence": 0.39
+    "influence": 0.39,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/af/fc/52/affc52b2-cf98-881c-4b6f-f322ce400a47/5059449157214.png/400x400bb.jpg"
   },
   {
     "id": "a295",
     "name": "Landa",
     "plays": 233,
     "hue": 92,
-    "influence": 0.86
+    "influence": 0.86,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a1/c8/a2/a1c8a26b-2184-dd7b-c928-23d5ed945025/5059449075624.png/400x400bb.jpg"
   }
 ];
 
