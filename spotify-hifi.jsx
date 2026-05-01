@@ -438,9 +438,13 @@ function InfluenceRow({label,sublabel,artEl,influence,tierLabel,onMore,onLess,lo
 const MIN_INF=0.01;
 function HiFiAlgorithmDashboard({onBack,onTuning,genreInfluence,artistInfluence,songInfluence,adjustGenre,adjustArtist,adjustSong}){
   const sortedGenres  = [...GENRES].sort((a,b)=>genreInfluence[b.id]-genreInfluence[a.id]);
-  const sortedArtists = [...ARTISTS].sort((a,b)=>artistInfluence[b.id]-artistInfluence[a.id]);
-  const _songsSorted  = [...SONGS].sort((a,b)=>songInfluence[b.id]-songInfluence[a.id]);
-  const sortedSongs   = [_songsSorted[0], RICK, ..._songsSorted.slice(1)];
+  const topPerTier=(items,getVal)=>{
+    const tiers=['Heavy Influence','Medium Influence','Occasional Influence'];
+    return tiers.flatMap(t=>items.filter(x=>influenceTier(getVal(x))===t).sort((a,b)=>getVal(b)-getVal(a)).slice(0,15));
+  };
+  const sortedArtists = topPerTier(ARTISTS, a=>artistInfluence[a.id]);
+  const _songsSorted  = topPerTier(SONGS, s=>songInfluence[s.id]);
+  const sortedSongs   = [_songsSorted[0], RICK, ..._songsSorted.slice(1).filter(s=>s.id!=='s_rick')];
 
   const [zeroConfirm,setZeroConfirm]=useState(null); // {kind:'genre'|'artist'|'song',id,cur}
   const [tuning,setTuning]=useState({});
@@ -605,52 +609,49 @@ function HiFiSwipeCard({song,zIndex,offset=0,isTop=true,songInfluence,artistInfl
   const [drag,setDrag]=useState({x:0,y:0});
   const [exit,setExit]=useState(null);
   const startRef=useRef(null);
-  const activeRef=useRef(false);
+  const draggingRef=useRef(false);
   const exitRef=useRef(false);
+  const onMoreRef=useRef(onMore);
+  const onLessRef=useRef(onLess);
+  useEffect(()=>{onMoreRef.current=onMore;},[onMore]);
+  useEffect(()=>{onLessRef.current=onLess;},[onLess]);
   const genre=GENRES.find(g=>g.id===song.genreId)?.name??'Unknown';
   const songTier=influenceTier(songInfluence[song.id]??song.influence);
   const artistTier=influenceTier(artistInfluence[song.artistId]??0.5);
   const genreTier=influenceTier(genreInfluence[song.genreId]??0.5);
 
-  useEffect(()=>{
-    if(!isTop)return;
-    const pt=e=>e.touches?.[0]?{x:e.touches[0].clientX,y:e.touches[0].clientY}:{x:e.clientX,y:e.clientY};
-    const move=e=>{
-      if(!activeRef.current||exitRef.current||!startRef.current)return;
-      const p=pt(e);setDrag({x:p.x-startRef.current.x,y:p.y-startRef.current.y});
-    };
-    const end=e=>{
-      if(!activeRef.current||exitRef.current||!startRef.current)return;
-      const p=pt(e);const dx=p.x-startRef.current.x;
-      activeRef.current=false;startRef.current=null;
-      if(dx>90){exitRef.current=true;setExit('m');setTimeout(()=>onMore&&onMore(),280);}
-      else if(dx<-90){exitRef.current=true;setExit('l');setTimeout(()=>onLess&&onLess(),280);}
-      else setDrag({x:0,y:0});
-    };
-    window.addEventListener('mousemove',move);window.addEventListener('mouseup',end);
-    window.addEventListener('touchmove',move,{passive:false});window.addEventListener('touchend',end);
-    return()=>{window.removeEventListener('mousemove',move);window.removeEventListener('mouseup',end);
-      window.removeEventListener('touchmove',move);window.removeEventListener('touchend',end);};
-  },[isTop,song.id,onMore,onLess]);
-
-  const onStart=e=>{
+  const onPointerDown=e=>{
     if(!isTop||exitRef.current)return;
-    const p=e.touches?.[0]?{x:e.touches[0].clientX,y:e.touches[0].clientY}:{x:e.clientX,y:e.clientY};
-    startRef.current=p;activeRef.current=true;setDrag({x:0,y:0});
+    e.currentTarget.setPointerCapture(e.pointerId);
+    startRef.current={x:e.clientX,y:e.clientY};
+    draggingRef.current=true;
+    setDrag({x:0,y:0});
+  };
+  const onPointerMove=e=>{
+    if(!draggingRef.current||exitRef.current||!startRef.current)return;
+    setDrag({x:e.clientX-startRef.current.x,y:e.clientY-startRef.current.y});
+  };
+  const onPointerUp=e=>{
+    if(!draggingRef.current||exitRef.current||!startRef.current)return;
+    const dx=e.clientX-startRef.current.x;
+    draggingRef.current=false;startRef.current=null;
+    if(dx>45){exitRef.current=true;setExit('m');setTimeout(()=>onMoreRef.current?.(),280);}
+    else if(dx<-45){exitRef.current=true;setExit('l');setTimeout(()=>onLessRef.current?.(),280);}
+    else setDrag({x:0,y:0});
   };
 
   let tx=drag.x,ty=drag.y,rot=drag.x/16;
   if(exit==='m'){tx=520;ty=-40;rot=22;}
   if(exit==='l'){tx=-520;ty=-40;rot=-22;}
-  const mOp=Math.min(1,Math.max(0,drag.x/90));
-  const lOp=Math.min(1,Math.max(0,-drag.x/90));
+  const mOp=Math.min(1,Math.max(0,drag.x/45));
+  const lOp=Math.min(1,Math.max(0,-drag.x/45));
 
-  return <div onMouseDown={onStart} onTouchStart={onStart} style={{
+  return <div onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} style={{
     position:'absolute',left:22,right:22,top:124+offset,height:450,borderRadius:28,zIndex,
     background:`linear-gradient(155deg,hsl(${song.hue},${song.sat}%,28%) 0%,hsl(${(song.hue+40)%360},${song.sat*.55}%,13%) 100%)`,
     boxShadow:'0 22px 55px rgba(0,0,0,.6)',
     transform:`translate(${tx}px,${ty}px) rotate(${rot}deg) scale(${1-offset*.018})`,
-    transition:activeRef.current?'none':'transform 270ms cubic-bezier(.2,.7,.2,1)',
+    transition:draggingRef.current?'none':'transform 270ms cubic-bezier(.2,.7,.2,1)',
     touchAction:'none',cursor:isTop?'grab':'default',userSelect:'none',overflow:'hidden'}}>
     <div style={{position:'absolute',top:22,left:'50%',transform:'translateX(-50%)',
       width:195,height:195,borderRadius:16,overflow:'hidden',boxShadow:'0 10px 30px rgba(0,0,0,.5)'}}>
