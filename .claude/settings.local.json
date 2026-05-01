@@ -5,7 +5,9 @@
       "Bash(curl -s --compressed \"https://itunes.apple.com/search?term=Taylor+Swift&entity=song&attribute=artistTerm&limit=1\")",
       "Bash(python3 -c \"import sys,json; r=json.load\\(sys.stdin\\)['results']; print\\(json.dumps\\([{k:v for k,v in x.items\\(\\) if k in \\('artistName','trackName','artworkUrl100'\\)} for x in r], indent=2\\)\\)\")",
       "Bash(curl -s --compressed -H \"Accept-Encoding: gzip\" \"https://itunes.apple.com/search?term=Taylor+Swift&entity=song&attribute=artistTerm&limit=3\" -o /tmp/itunes_test.json)",
-      "Bash(python3 -c \"import json; r=json.load\\(open\\('/tmp/itunes_test.json'\\)\\)['results']; print\\(json.dumps\\([{k:v for k,v in x.items\\(\\) if k in \\('artistName','trackName','artworkUrl100'\\)} for x in r], indent=2\\)\\)\")"
+      "Bash(python3 -c \"import json; r=json.load\\(open\\('/tmp/itunes_test.json'\\)\\)['results']; print\\(json.dumps\\([{k:v for k,v in x.items\\(\\) if k in \\('artistName','trackName','artworkUrl100'\\)} for x in r], indent=2\\)\\)\")",
+      "Bash(mkdir -p /Users/harshkumar/projects/gatech/2026_01_hci/public)",
+      "Bash(cp /Users/harshkumar/Desktop/Prototypes.pdf /Users/harshkumar/projects/gatech/2026_01_hci/public/Prototypes.pdf)"
     ]
   }
 }

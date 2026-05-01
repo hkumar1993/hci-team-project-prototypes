@@ -29,12 +29,11 @@ function TopTabNav({activeTab,onTabChange}){
 }
 
 function RawPlaceholder(){
-  return <div style={{width:'100%',height:'100%',background:BG,
-    display:'flex',alignItems:'center',justifyContent:'center',
-    color:'rgba(245,239,224,.4)',fontSize:16,fontWeight:600,
-    fontFamily:"'Manrope','Inter',system-ui,sans-serif"}}>
-    PDF will be embedded here
-  </div>;
+  return <iframe
+    src={`${import.meta.env.BASE_URL}Prototypes.pdf`}
+    style={{width:'100%',height:'100%',border:'none',background:BG}}
+    title="Raw Hand Drawn Prototype"
+  />;
 }
 
 export default function App(){
@@ -52,7 +51,9 @@ export default function App(){
         alignItems:'center',justifyContent:'center',background:'#000'}}>
         <HiFiView/>
       </div>
-      {activeTab==='raw'&&<RawPlaceholder/>}
+      <div style={{display:activeTab==='raw'?'block':'none',height:'100%'}}>
+        <RawPlaceholder/>
+      </div>
     </div>
   </>;
 }
