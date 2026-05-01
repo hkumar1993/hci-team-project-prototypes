@@ -914,6 +914,13 @@ function HiFiTuningSummary({snapshot,genreInfluence,artistInfluence,songInfluenc
 // ── HiFi View (flow controller + state owner) ────────────────
 
 export default function HiFiView(){
+  const [scale,setScale]=useState(()=>(window.innerHeight*0.9)/800);
+  useEffect(()=>{
+    const onResize=()=>setScale((window.innerHeight*0.9)/800);
+    window.addEventListener('resize',onResize);
+    return ()=>window.removeEventListener('resize',onResize);
+  },[]);
+
   const [genreInfluence,setGenreInfluence]=useState(
     ()=>Object.fromEntries(GENRES.map(g=>[g.id,g.weight]))
   );
@@ -1029,22 +1036,24 @@ export default function HiFiView(){
   return (
     <div style={{width:'100%',height:'100%',background:'#000',
       display:'flex',alignItems:'center',justifyContent:'center'}}>
-      {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')} onPlaylist={openPlaylist} playSong={playSong} audioProps={audioProps} genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}/>}
-      {screen==='playlist'&&playlistInfo&&<HiFiPlaylistScreen {...playlistInfo} onBack={()=>setScreen('home')} onLibrary={()=>setScreen('library')} onAlgo={()=>setScreen('algo')} playSong={playSong} audioProps={audioProps}/>}
-      {screen==='library'&&<HiFiLibraryScreen onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} audioProps={audioProps}/>}
-      {screen==='algo'&&<HiFiAlgorithmDashboard
-        onBack={()=>setScreen('library')} onTuning={goToTuning}
-        genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
-        adjustGenre={adjustGenre} adjustArtist={adjustArtist} adjustSong={adjustSong}/>}
-      {screen==='tuning'&&<HiFiGuidedTuning
-        onBack={()=>setScreen('algo')} onFinish={()=>setScreen('summary')}
-        songInfluence={songInfluence} artistInfluence={artistInfluence} genreInfluence={genreInfluence}
-        adjustSong={adjustSong} adjustArtist={adjustArtist} adjustGenre={adjustGenre}
-        playSong={playSong} audioProps={audioProps}/>}
-      {screen==='summary'&&snapshot&&<HiFiTuningSummary
-        snapshot={snapshot}
-        genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
-        onDone={()=>setScreen('algo')}/>}
+      <div style={{transform:`scale(${scale})`,transformOrigin:'center center'}}>
+        {screen==='home'&&<HiFiHomeScreen onLibrary={()=>setScreen('library')} onPlaylist={openPlaylist} playSong={playSong} audioProps={audioProps} genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}/>}
+        {screen==='playlist'&&playlistInfo&&<HiFiPlaylistScreen {...playlistInfo} onBack={()=>setScreen('home')} onLibrary={()=>setScreen('library')} onAlgo={()=>setScreen('algo')} playSong={playSong} audioProps={audioProps}/>}
+        {screen==='library'&&<HiFiLibraryScreen onBack={()=>setScreen('home')} onAlgo={()=>setScreen('algo')} audioProps={audioProps}/>}
+        {screen==='algo'&&<HiFiAlgorithmDashboard
+          onBack={()=>setScreen('library')} onTuning={goToTuning}
+          genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
+          adjustGenre={adjustGenre} adjustArtist={adjustArtist} adjustSong={adjustSong}/>}
+        {screen==='tuning'&&<HiFiGuidedTuning
+          onBack={()=>setScreen('algo')} onFinish={()=>setScreen('summary')}
+          songInfluence={songInfluence} artistInfluence={artistInfluence} genreInfluence={genreInfluence}
+          adjustSong={adjustSong} adjustArtist={adjustArtist} adjustGenre={adjustGenre}
+          playSong={playSong} audioProps={audioProps}/>}
+        {screen==='summary'&&snapshot&&<HiFiTuningSummary
+          snapshot={snapshot}
+          genreInfluence={genreInfluence} artistInfluence={artistInfluence} songInfluence={songInfluence}
+          onDone={()=>setScreen('algo')}/>}
+      </div>
     </div>
   );
 }
